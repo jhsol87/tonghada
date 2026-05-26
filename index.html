@@ -2,85 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>TONGHADA - Korean-Dutch Translation & Interpretation</title>
   
-  <!-- 1. fullPage.js 핵심 CSS 불러오기 (네이버 앱 버그 해결용) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.css" />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* 리셋 및 기본 설정 */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      overflow: hidden; /* fullPage.js 사용 시 필요 */
     }
 
-    /* 구식 CSS 자석 속성들은 전부 제거했습니다. 라이브러리가 알아서 해줍니다. */
-    body {
-      background-color: #f8f9fa;
-      color: #333;
+    /* 👇 1. [CSS 핵심] fullPage 내부 셀 정중앙 강제 */
+    .fp-tableCell {
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      width: 100% !important;
+      height: 100% !important;
+      padding: 60px 8% !important; /* 위아래 여백을 넉넉히 */
     }
 
-    section {
-      padding: 40px 8%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    /* 섹션별 배경 정의 */
+    /* 각 섹션 배경 */
     #hero { background-color: #ffffff; }
     #about { background-color: #0F2042; color: #ffffff; }
     #services { background-color: #E2F6EC; text-align: center; }
-    #contact { background-color: #ffffff; padding-bottom: 20px; }
+    #contact { background-color: #ffffff; }
 
-    /* 내부 콘텐츠 정렬을 위한 컨테이너 */
+    /* 내부 콘텐츠 정렬 컨테이너 */
     .section-content {
       width: 100%;
       max-width: 1200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
+    /* 그리드 및 텍스트 스타일 */
     .grid-2 {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 5%;
       width: 100%;
     }
-
-    #about .grid-2 {
-      grid-template-columns: 0.8fr 1.2fr;
-    }
+    #about .grid-2 { grid-template-columns: 0.8fr 1.2fr; }
 
     .logo {
       font-size: 24px;
       font-weight: 800;
       color: #0F2042;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
     #about .logo { color: #ffffff; }
 
     .headline {
-      font-size: 42px;
+      font-size: 38px;
       font-weight: 700;
-      line-height: 1.3;
+      line-height: 1.2;
       color: #0F2042;
       margin-bottom: 20px;
     }
+    #about h2.headline { color: #ffffff; }
 
     .subtext {
-      font-size: 18px;
+      font-size: 17px;
       color: #555;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
       line-height: 1.6;
     }
+    #about .subtext { color: #cbd5e1; }
 
     .btn {
       display: inline-block;
-      padding: 15px 35px;
+      padding: 14px 30px;
       background-color: #5CE1A6;
       color: #0F2042;
       text-decoration: none;
@@ -90,7 +85,7 @@
 
     .img-box {
       width: 100%;
-      height: 400px;
+      height: 350px;
       background-color: #e9ecef;
       border-radius: 12px;
       display: flex;
@@ -102,21 +97,22 @@
     .services-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: 25px;
       width: 100%;
       max-width: 900px;
+      margin-top: 30px;
     }
 
     .card {
       background: white;
-      padding: 40px;
+      padding: 30px;
       border-radius: 16px;
       text-align: left;
       box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
     .card h3 { color: #0F2042; margin-bottom: 15px; }
     .card ul { list-style: none; }
-    .card ul li { margin-bottom: 10px; color: #555; }
+    .card ul li { margin-bottom: 8px; color: #555; }
 
     .contact-wrapper {
       text-align: center;
@@ -125,12 +121,12 @@
     }
 
     .email-link {
-      font-size: 32px;
+      font-size: 30px;
       font-weight: 700;
       color: #0F2042;
       text-decoration: none;
       display: block;
-      margin: 20px 0;
+      margin: 15px 0;
     }
 
     footer {
@@ -146,25 +142,23 @@
     /* 모바일 반응형 디자인 */
     @media (max-width: 768px) {
       .grid-2 { grid-template-columns: 1fr !important; gap: 20px; }
-      .img-box { height: 200px; }
+      .img-box { height: 180px; }
       .services-grid { grid-template-columns: 1fr; }
-      .headline { font-size: 28px; }
+      .headline { font-size: 26px; }
+      .fp-tableCell { padding: 40px 6% !important; } /* 모바일 여백 줄임 */
     }
   </style>
 </head>
 <body>
 
-  <!-- fullpage를 구동할 메인 부모 태그 -->
   <div id="fullpage">
 
-    <!-- SCREEN 1: HERO -->
-    <!-- fullpage를 쓸 때는 각 섹션 클래스에 반드시 'section'을 넣어주어야 합니다 -->
     <div class="section" id="hero">
       <div class="section-content">
         <div class="grid-2">
           <div>
             <div class="logo">TONGHADA T➔</div>
-            <h1 class="headline">Connecting Korea and the Netherlands.<br>Professional Korean-Dutch Translation & Interpretation.</h1>
+            <h1 class="headline">Connecting Korea<br>and the Netherlands.<br>Korean-Dutch Linguistics.</h1>
             <p class="subtext">A trusted partner for precise and reliable linguistic solutions.</p>
             <a href="#contact" class="btn">Get a Quote ➔</a>
           </div>
@@ -173,73 +167,73 @@
       </div>
     </div>
 
-    <!-- SCREEN 2: ABOUT -->
     <div class="section" id="about">
       <div class="section-content">
         <div class="grid-2">
           <div class="img-box" style="background-color: #1e335a; color:#6b84b5;">Expert Profile Image</div>
           <div>
             <div class="logo">Meet the Expert: Park Ji-Won (M.A.)</div>
-            <h2 class="headline" style="color: #ffffff; font-size: 32px;">Verified Expertise in Business, Legal, & IT</h2>
-            <p class="subtext" style="color: #cbd5e1;">한국어와 네덜란드어의 미묘한 문화적 차이까지 정확하게 짚어내는 10년 경력의 베테랑 통번역사입니다.<br><br>• 한국-네덜란드 통번역대학원 석사 졸업<br>• 네덜란드 법원 인증 번역사 자격 보유<br>• 글로벌 자동차/IT 기업 전담 통번역 100회 이상 수행</p>
+            <h2 class="headline" style="font-size: 28px;">Business, Legal, & IT</h2>
+            <p class="subtext">한국어와 네덜란드어의 미묘한 문화적 차이까지 정확하게 짚어내는 10년 경력의 베테랑 통번역사입니다.<br><br>• 한국-네덜란드 통번역대학원 석사 졸업<br>• 네덜란드 법원 인증 번역사 자격 보유</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SCREEN 3: SERVICES -->
     <div class="section" id="services">
       <div class="section-content" style="flex-direction: column;">
         <h2 class="headline">Our Services</h2>
-        <p class="subtext">두 문화와 언어를 완벽하게 연결하는 전문 비즈니스 서비스를 제공합니다.</p>
+        <p class="subtext">두 문화와 언어를 연결하는 전문 비즈니스 서비스를 제공합니다.</p>
         <div class="services-grid">
           <div class="card">
-            <h3>📝 Translation (번역)</h3>
+            <h3>📝 Translation</h3>
             <ul>
               <li>• 비즈니스 계약서 및 공문서</li>
-              <li>• IT / 자동차 / 기술 매뉴얼</li>
-              <li>• 마케팅 자료 및 웹사이트 현지화</li>
+              <li>• IT / 자동차 매뉴얼</li>
+              <li>• 마케팅 자료 현지화</li>
             </ul>
           </div>
           <div class="card">
-            <h3>🗣️ Interpretation (통역)</h3>
+            <h3>🗣️ Interpretation</h3>
             <ul>
-              <li>• 비즈니스 미팅 및 임원 회의 수행</li>
-              <li>• 유럽 현지 전시회 및 세미나 통역</li>
-              <li>• 화상 회의(Zoom/Teams) 원격 통역</li>
+              <li>• 비즈니스 미팅</li>
+              <li>• 유럽 현지 전시회</li>
+              <li>• 원격 통역 지원</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SCREEN 4: CONTACT & FOOTER -->
     <div class="section" id="contact">
       <div class="section-content" style="flex-direction: column;">
         <div class="contact-wrapper">
-          <h2 class="headline" style="font-size: 36px;">Let's Work Together</h2>
-          <p class="subtext">궁금하신 점을 이메일로 보내주시면 24시간 내에 답변드립니다.</p>
+          <h2 class="headline" style="font-size: 34px;">Let's Work Together</h2>
+          <p class="subtext">궁금하신 점을 이메일로 보내주시면 답변드립니다.</p>
           <a href="mailto:info@tonghada.nl" class="email-link">info@tonghada.nl</a>
           <p style="color: #888; font-size: 14px;">www.tonghada.nl</p>
         </div>
       </div>
       <footer>
-        <p>© 2026 TONGHADA. All rights reserved. | Registered with Mijndomein.</p>
+        <p>© 2026 TONGHADA. All rights reserved. | Mijndomein.</p>
       </footer>
     </div>
 
   </div>
 
-  <!-- 2. fullPage.js 핵심 자바스크립트 파일 불러오기 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.min.js"></script>
   <script>
-    // 3. 네이버 앱과 모든 모바일 브라우저에서 작동하도록 기능 켜기
+    // 👇 2. [자바스크립트 핵심] 모바일 정렬 오류 교정 옵션 추가
     new fullpage('#fullpage', {
       autoScrolling: true,
       scrollBar: false,
-      navigation: true, // 우측에 동그라미 네비게이션 표시
-      scrollingSpeed: 700, // 부드럽게 넘어가는 속도 (0.7초)
-      anchors: ['hero', 'about', 'services', 'contact'], // 주소 뒤에 #hero 등으로 묶어주는 역할
+      navigation: true,
+      scrollingSpeed: 800,
+      anchors: ['hero', 'about', 'services', 'contact'],
+      
+      /* 스킵 현상과 정렬 오류를 막기 위해 이 두 옵션을 세팅합니다 */
+      scrollOverflow: false, // 콘텐츠가 넘치더라도 내부 스크롤 대신 수직 중앙 정렬 유지
+      verticalCentering: true // 어떤 상황에서도 콘텐츠를 수직 정앙에 강제 배치
     });
   </script>
 </body>
