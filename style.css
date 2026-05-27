@@ -223,21 +223,17 @@
       .email-link { font-size: 26px; }
     }
 
-    .linkedin-link {
+    .linkedin-img-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px; /* 아이콘과 글자 사이 간격 */
-      color: #5CE1A6; /* 우리가 쓰는 포인트 민트색 */
+      gap: 10px;
+      color: #ffffff; /* 글씨를 하얗게 하거나 민트색으로 세팅 */
       text-decoration: none;
       font-weight: 600;
-      font-size: 16px;
       margin-top: 20px;
-      transition: opacity 0.2s;
     }
-    .linkedin-link:hover {
-      opacity: 0.8; /* 마우스 올렸을 때 살짝 투명해지는 효과 */
-    }
-    /* 아이콘 크기만 살짝 키우기 */
-    .linkedin-link i {
-      font-size: 20px; 
+    .linkedin-img-link img {
+      width: 24px;  /* 로고 크기를 아담하게 정렬 */
+      height: 24px;
+      object-fit: contain;
     }
