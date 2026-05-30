@@ -83,6 +83,7 @@
       font-weight: 800;
       color: #0F2042;
       margin-bottom: 25px;
+        overflow: hidden;
     }
     #about .logo { color: #ffffff; }
 
