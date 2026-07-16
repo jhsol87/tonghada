@@ -1,109 +1,585 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TONGHADA - Korean-Dutch Translation & Interpretation</title>
+  <title>TONGHADA - 통하다 통번역 컨설팅</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0A0E1A',     /* 깊은 네이비 */
+            brandPurple: '#1A1235',   /* 미드나잇 퍼플 */
+            brandMint: '#00F2C4',     /* 포인트 민트 */
+            brandGray: '#F3F4F6',     /* 라이트 그레이 */
+            textDark: '#111827',
+            textLight: '#9CA3AF'
+          },
+          fontFamily: {
+            sans: ['Noto Sans KR', 'Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .lang-content { display: none; }
+    .active-lang { display: block; }
+    .glow-effect:hover {
+      box-shadow: 0 0 20px rgba(0, 242, 196, 0.4);
+      transition: all 0.3s ease;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-brandDark text-white font-sans antialiased selection:bg-brandMint selection:text-brandDark">
 
-  <div class="scroll-container">
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-brandDark/85 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+      <!-- LOGO -->
+      <a href="#" class="flex items-center space-x-2">
+        <img src="logo.jpg" alt="TONGHADA Logo" class="h-8 w-auto object-contain">
+      </a>
 
-    <section id="hero">
-      <div class="lang-switcher">
-        <a href="index.html">KR</a> | <a href="en.html">EN</a> | <strong>NL</strong>
+      <!-- NAVIGATION & LANGUAGE SWITCHER -->
+      <div class="flex items-center space-x-8">
+        <nav class="hidden md:flex space-x-6 text-sm font-medium text-textLight">
+          <a href="#about" class="hover:text-brandMint transition" data-ko="회사 소개" data-en="About Us" data-nl="Over Ons">회사 소개</a>
+          <a href="#profile" class="hover:text-brandMint transition" data-ko="약력" data-en="Profile" data-nl="Profiel">약력</a>
+          <a href="#services" class="hover:text-brandMint transition" data-ko="서비스" data-en="Services" data-nl="Diensten">서비스</a>
+          <a href="#portfolio" class="hover:text-brandMint transition" data-ko="실적" data-en="Experience" data-nl="Ervaring">실적</a>
+          <a href="#contact" class="hover:text-brandMint transition" data-ko="연락처" data-en="Contact" data-nl="Contact">연락처</a>
+        </nav>
+
+        <!-- Multi-language Buttons -->
+        <div class="flex items-center bg-white/5 p-1 rounded-full border border-white/10 text-xs">
+          <a href="index.html" class="px-3 py-1.5 rounded-full font-bold bg-brandMint text-brandDark">KR</a>
+          <a href="en.html" class="px-3 py-1.5 rounded-full font-bold text-textLight">EN</a>
+          <a href="nl.html" class="px-3 py-1.5 rounded-full font-bold text-textLight">NL</a>
+        </div>
       </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="pt-40 pb-24 md:pt-48 md:pb-36 bg-gradient-to-b from-brandPurple via-brandDark to-brandDark relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,242,196,0.08),transparent_50%)]"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-brandMint/10 border border-brandMint/30 text-brandMint text-xs font-semibold tracking-wider uppercase mb-6"
+            data-ko="통하다 통번역 컨설팅" data-en="TONGHADA TRANSLATION & CONSULTING" data-nl="TONGHADA TRANSLATION & CONSULTING">
+        통하다 통번역 컨설팅
+      </span>
       
-      <div class="section-content">
-        <div class="grid-2">
-          <div>
-            <div class="logo"><img src="logo.jpg"></div>
-            <h1 class="headline">Verbindt Zuid-Korea<br>en Nederland.<br>Professionele Vertalingen.</h1>
-            <p class="subtext">Uw betrouwbare partner voor nauwkeurige, op maat gemaakte en professionele taaloplossingen voor zakelijk succes.</p>
-            <a href="#contact" class="btn">Offerte Aanvragen ➔</a>
+      <!-- HERO HEADING (DILINGUAL TRANSITION) -->
+      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto mb-8">
+        <span class="lang-ko">비즈니스의 맥락을 이어 성공을 <span class="text-brandMint">통하다</span></span>
+        <span class="lang-en">Connecting Minds and <span class="text-brandMint">Bridging</span> Your Global Business</span>
+        <span class="lang-nl active-lang">Verbinden van Talen, <span class="text-brandMint">Samenbrengen</span> van Mensen</span>
+      </h1>
+
+      <p class="text-base md:text-lg text-textLight max-w-2xl mx-auto mb-10 leading-relaxed">
+        <span class="lang-ko">단순한 언어 변환을 넘어, 7년 경력의 글로벌 테크 리크루터 출신 전문가가 비즈니스의 깊은 가치를 고스란히 현지화하여 전달합니다.</span>
+        <span class="lang-en">Beyond literal translations, an ex-corporate recruiter localizes your high-value business context with precise industry understanding.</span>
+        <span class="lang-nl active-lang">Meer dan een letterlijke vertaling. Een ex-recruiter lokaliseert uw zakelijke context met een diepgaand begrip van uw sector.</span>
+      </p>
+
+      <div class="flex justify-center space-x-4">
+        <a href="#contact" class="px-8 py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300"
+           data-ko="무료 견적 문의" data-en="Get a Quote" data-nl="Vraag een Offerte Aan">
+          무료 견적 문의
+        </a>
+        <a href="#services" class="px-8 py-4 bg-white/5 border border-white/10 hover:border-brandMint/50 font-bold rounded-lg text-white transition duration-300"
+           data-ko="서비스 알아보기" data-en="Our Services" data-nl="Onze Diensten">
+          서비스 알아보기
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT US (COMPANY INTRO) ==================== -->
+  <section id="about" class="py-24 border-y border-white/5 bg-brandDark relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Visual Accent -->
+        <div class="relative bg-gradient-to-br from-brandPurple to-brandDark p-8 rounded-2xl border border-white/5 shadow-2xl">
+          <div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-brandMint"></div>
+          <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-brandMint"></div>
+          <div class="space-y-6 py-6">
+            <h3 class="text-brandMint font-mono text-sm tracking-widest uppercase">Philosophy</h3>
+            <blockquote class="text-xl md:text-2xl font-light italic leading-relaxed text-gray-200">
+              <span class="lang-ko">"언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 출발합니다."</span>
+              <span class="lang-en">"Connecting the minds of people who speak different languages and wish to understand one another."</span>
+              <span class="lang-nl active-lang">"Zorgen dat mensen die een andere taal spreken elkaar begrijpen en een diepere verbinding kunnen vinden."</span>
+            </blockquote>
+            <p class="text-sm text-brandMint font-medium">— TONGHADA Translation & Consulting</p>
+          </div>
+        </div>
+
+        <!-- Detailed Description -->
+        <div class="space-y-8">
+          <div class="space-y-4">
+            <span class="text-xs font-mono tracking-widest text-brandMint uppercase" data-ko="회사 소개" data-en="Company Profile" data-nl="Bedrijfsprofiel">회사 소개</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold" data-ko="통하다 통번역 컨설팅" data-en="Tonghada Consulting" data-nl="Tonghada Consulting">통하다 통번역 컨설팅</h2>
+          </div>
+          
+          <div class="text-textLight leading-relaxed space-y-6">
+            <div class="lang-ko space-y-4">
+              <p>‘통하다'라는 회사명은 언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 지었습니다.</p>
+              <p>한국어-네덜란드어-영어 통역과 번역을 2009년부터 전문적으로 해오고 있으며 고객이 필요한 서비스를 최선을 다해 제공하겠습니다.</p>
+            </div>
+            <div class="lang-en space-y-4">
+              <p>‘Tonghada’ is a Korean word meaning ‘being on the same page’. My mission is to connect the minds of people who speak different languages and wish to understand one another.</p>
+              <p>With professional experience in Korean-English-Dutch interpretation and translation since 2009, I am committed to delivering the highest quality of service to you.</p>
+            </div>
+            <div class="lang-nl active-lang space-y-4">
+              <p>‘Tonghada’ is een Koreaans woord en betekent “op één lijn zitten”. Mijn doel is om te zorgen dat mensen die een andere taal spreken elkaar begrijpen en de diepere verbinding kunnen vinden.</p>
+              <p>Sinds 2009 voer ik Koreaans-Nederlands-Engels tolk- en vertaalopdrachten uit van hoogwaardige kwaliteit.</p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about">
-      <div class="lang-switcher">
-        <a href="index.html">KR</a> | <a href="en.html">EN</a> | <strong>NL</strong>
+  <!-- ==================== REPRESENTATIVE PROFILE (약력) ==================== -->
+  <section id="profile" class="py-24 bg-brandDark/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-mono tracking-widest text-brandMint uppercase" data-ko="대표 약력" data-en="Professional Profile" data-nl="Professioneel Profiel">대표 약력</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold" data-ko="비즈니스 전문성의 기반" data-en="The Foundation of Expertise" data-nl="De Basis van Expertise">비즈니스 전문성의 기반</h2>
       </div>
 
-      <div class="section-content">
-        <div class="grid-2">
-          <div class="img-box"><img src="profile.jpg"></div>
-          <div>
-            <div class="logo">Hoofdvertaler & Tolk</div>
-            <h2 class="headline">Gespecialiseerd in Business, Legal & IT<br>Bewezen Lokalisatie-expertise</h2>
-            <p class="subtext">
-              Hoogwaardige vertaal- en tolkdiensten die de subtiele culturele en taalkundige nuances tussen het Koreaans en het Nederlands feilloos overbruggen.<br><br>
-              • Masterdiploma behaald aan een universiteit in Nederland<br>
-              • Uitgebreide ervaring met complexe zakelijke tolk- en vertaalprojecten<br>
-              • Diepgaande expertise in de sectoren Automotive, IT en Mobiliteit
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Education & Military -->
+        <div class="bg-brandPurple/30 border border-white/5 p-8 rounded-2xl space-y-6">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-graduation-cap text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold" data-ko="학력 및 군경력" data-en="Education & Military" data-nl="Educatie & Militaire">학력 및 군경력</h3>
+          </div>
+          <ul class="space-y-4 text-textLight text-sm md:text-base">
+            <li class="lang-ko space-y-1">
+              <p class="text-white font-semibold">암스테르담 자유대학교 경영학 석사</p>
+              <p class="text-xs">인적자원관리 (Human Resource Management)</p>
+            </li>
+            <li class="lang-en space-y-1">
+              <p class="text-white font-semibold">MSc in Business Administration</p>
+              <p class="text-xs">VU University Amsterdam (Human Resource Management)</p>
+            </li>
+            <li class="lang-nl active-lang space-y-1">
+              <p class="text-white font-semibold">Master of Science Bedrijfskunde</p>
+              <p class="text-xs">Vrije Universiteit Amsterdam (Human Resource Management)</p>
+            </li>
+
+            <li class="lang-ko space-y-1">
+              <p class="text-white font-semibold">암스테르담 자유대학교 경영학 학사</p>
+              <p class="text-xs">네덜란드어 정규 과정 이수 (Program taught in Dutch)</p>
+            </li>
+            <li class="lang-en space-y-1">
+              <p class="text-white font-semibold">BSc in Business Administration</p>
+              <p class="text-xs">VU University Amsterdam (Dutch-taught program)</p>
+            </li>
+            <li class="lang-nl active-lang space-y-1">
+              <p class="text-white font-semibold">Bachelor of Science Bedrijfskunde</p>
+              <p class="text-xs">Vrije Universiteit Amsterdam (Nederlandstalig)</p>
+            </li>
+
+            <li class="lang-ko space-y-1">
+              <p class="text-white font-semibold">대한민국 해군 학사장교 중위 전역</p>
+              <p class="text-xs">전투정보관, 사령관 부관, 전담 통역장교 실무</p>
+            </li>
+            <li class="lang-en space-y-1">
+              <p class="text-white font-semibold">Republic of Korea Navy Officer</p>
+              <p class="text-xs">Combat Information Officer, Flag aide, Interpretation Officer</p>
+            </li>
+            <li class="lang-nl active-lang space-y-1">
+              <p class="text-white font-semibold">Zuid-Koreaanse Marine Officier</p>
+              <p class="text-xs">Officier Gevechtsinformatie, Adjutant, Tolk Officier</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Corporate Experience -->
+        <div class="bg-brandPurple/30 border border-white/5 p-8 rounded-2xl space-y-6">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-briefcase text-xl"></i>
+            </div>
+            <h3 class="text-xl font-bold" data-ko="비즈니스 실무 경력" data-en="Business Experience" data-nl="Zakelijke Ervaring">비즈니스 실무 경력</h3>
+          </div>
+          <ul class="space-y-4 text-textLight text-sm md:text-base">
+            <li class="lang-ko space-y-1">
+              <p class="text-white font-semibold">글로벌 리크루터 및 헤드헌터 7년 역임 (2018-2025)</p>
+              <p class="text-xs">해양 에너지, 우주항공, 신재생 에너지, 반도체 제조 장비 도메인 전문</p>
+            </li>
+            <li class="lang-en space-y-1">
+              <p class="text-white font-semibold">7 Years as Corporate Recruiter & Consultant (2018-2025)</p>
+              <p class="text-xs">Specialized in Offshore, Space, Renewable Energy, and Semiconductor sectors</p>
+            </li>
+            <li class="lang-nl active-lang space-y-1">
+              <p class="text-white font-semibold">7 Jaar Ervaring als Recruiter & Consultant (2018-2025)</p>
+              <p class="text-xs">Gespecialiseerd in Offshore, Ruimtevaart, Duurzame Energie, en Halfgeleiders</p>
+            </li>
+
+            <li class="lang-ko space-y-1">
+              <p class="text-white font-semibold">비즈니스 전문 프리랜서 통번역가 (2009년 ~ 현재)</p>
+              <p class="text-xs">한-영-네덜란드 전문 비즈니스, 법률, 산업 기술 통번역 전담</p>
+            </li>
+            <li class="lang-en space-y-1">
+              <p class="text-white font-semibold">Freelance Interpreter & Translator (2009 - Present)</p>
+              <p class="text-xs">Focus on high-stakes business, legal, and engineering localization</p>
+            </li>
+            <li class="lang-nl active-lang space-y-1">
+              <p class="text-white font-semibold">Freelance Tolk & Vertaler (2009 - Heden)</p>
+              <p class="text-xs">Focus op high-stakes zakelijke, juridische, en technische lokalisatie</p>
+            </li>
+
+            <li class="lang-ko space-y-1">
+              <p class="text-white font-semibold">통하다 통번역 컨설팅 설립 (2026)</p>
+              <p class="text-xs">한-영-네덜란드 비즈니스 확장을 돕는 글로벌 가교 기업 출범</p>
+            </li>
+            <li class="lang-en space-y-1">
+              <p class="text-white font-semibold">Founded TONGHADA Translation & Consulting (2026)</p>
+              <p class="text-xs">Established as a specialized agency bridging Korean-European enterprises</p>
+            </li>
+            <li class="lang-nl active-lang space-y-1">
+              <p class="text-white font-semibold">Oprichting van TONGHADA (2026)</p>
+              <p class="text-xs">Opgericht als een gespecialiseerde brug tussen Koreaanse en Europese bedrijven</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES OVERVIEW (서비스 소개) ==================== -->
+  <section id="services" class="py-24 bg-brandDark relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-mono tracking-widest text-brandMint uppercase" data-ko="서비스 영역" data-en="Services Portfolio" data-nl="Diensten Portfolio">서비스 영역</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold" data-ko="종합 비즈니스 통번역 솔루션" data-en="Comprehensive Business Solutions" data-nl="Volledige Zakelijke Oplossingen">종합 비즈니스 통번역 솔루션</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Service 1: Interpretation -->
+        <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3 class="text-lg font-bold" data-ko="순차 및 수행 통역" data-en="Interpretation" data-nl="Tolken">순차 및 수행 통역</h3>
+            <ul class="space-y-2 text-xs md:text-sm text-textLight">
+              <li data-ko="• 비즈니스 계약 협상" data-en="• Business Meetings" data-nl="• Zakelijke Meetings">• 비즈니스 계약 협상</li>
+              <li data-ko="• VIP 현지 수행 통역" data-en="• VIP Escort & Escorts" data-nl="• VIP Begeleiding">• VIP 현지 수행 통역</li>
+              <li data-ko="• 공공기관 및 단체 연수" data-en="• Group Study Visits" data-nl="• Groepsbezoeken">• 공공기관 및 단체 연수</li>
+              <li data-ko="• 법원 행정소송 및 관공서" data-en="• Legal & Court Cases" data-nl="• Juridische & Rechtbank">• 법원 행정소송 및 관공서</li>
+              <li data-ko="• 화상회의 및 인터뷰" data-en="• Video Conferences" data-nl="• Video Conferences">• 화상회의 및 인터뷰</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 2: Translation -->
+        <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-file-invoice"></i>
+            </div>
+            <h3 class="text-lg font-bold" data-ko="고품질 전문 번역" data-en="Translation" data-nl="Vertalen">고품질 전문 번역</h3>
+            <ul class="space-y-2 text-xs md:text-sm text-textLight">
+              <li data-ko="• 기업 IR 자료 및 카탈로그" data-en="• Business presentations" data-nl="• Zakelijke presentaties">• 기업 IR 자료 및 카탈로그</li>
+              <li data-ko="• 정밀 기술 사양서 및 특허" data-en="• Technical specs & Patents" data-nl="• Technische specs & Patenten">• 정밀 기술 사양서 및 특허</li>
+              <li data-ko="• 공식 비즈니스 서한 / 이메일" data-en="• Executive correspondence" data-nl="• Zakelijke correspondentie">• 공식 비즈니스 서한 / 이메일</li>
+              <li data-ko="• 다큐멘터리 / 예능 자막" data-en="• TV & Media Subtitles" data-nl="• TV & Media Ondertiteling">• 다큐멘터리 / 예능 자막</li>
+              <li data-ko="• 뉴스 보도자료 및 논문" data-en="• Press releases & Papers" data-nl="• Persberichten & Documenten">• 뉴스 보도자료 및 논문</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 3: Driving -->
+        <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-car"></i>
+            </div>
+            <h3 class="text-lg font-bold" data-ko="수행 운전 서비스" data-en="Driving (Upon Request)" data-nl="Chauffeur (Optioneel)">수행 운전 서비스</h3>
+            <p class="text-xs md:text-sm text-textLight leading-relaxed">
+              <span class="lang-ko">해외 출장 바이어와 동행 시, 최대 9인승 승합차량까지 직접 운전하며 통역 서비스를 원스톱으로 제공합니다. 추가 차량 조율 번거로움을 줄이고 현지 출장 예산을 획기적으로 절감하십시오.</span>
+              <span class="lang-en">We provide comfortable on-site mobility. Able to drive vehicles up to 9 passengers to escort VIP clients and project teams efficiently across European locations.</span>
+              <span class="lang-nl active-lang">Gemakkelijk vervoer op locatie. Mogelijkheid om personenbusjes (tot 9 personen) te besturen voor het efficiënt vervoeren van VIP-klanten en delegaties.</span>
             </p>
-            <a href="https://www.linkedin.com/in/jinyoo/" target="_blank" class="linkedin-icon-btn" title="LinkedIn Profile">
-              <i class="fab fa-linkedin"></i>
-            </a>
+          </div>
+        </div>
+
+        <!-- Service 4: Arrangement -->
+        <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3 class="text-lg font-bold" data-ko="현지 섭외 및 조율" data-en="Arrangement & Admin" data-nl="Coördinatie & Contact">현지 섭외 및 조율</h3>
+            <p class="text-xs md:text-sm text-textLight leading-relaxed">
+              <span class="lang-ko">네덜란드 정부 부처, 유관 기업, 항공사 등 주요 기관과의 최초 접촉(Initial Contact) 및 미팅 조율, 비즈니스 매칭 업무를 대신 처리해 드리는 컨설팅을 지원합니다.</span>
+              <span class="lang-en">Facilitating administrative and operational bridges. From initial contact with European government bodies, aviation sectors, and partners to meeting arrangements.</span>
+              <span class="lang-nl active-lang">Ondersteuning bij contacten. Van het eerste contact met Nederlandse overheidsinstanties, luchtvaartbedrijven tot het plannen van zakelijke meetings.</span>
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="services">
-      <div class="lang-switcher">
-        <a href="index.html">KR</a> | <a href="en.html">EN</a> | <strong>NL</strong>
+  <!-- ==================== PORTFOLIO & WORK EXPERIENCE (최근 이력) ==================== -->
+  <section id="portfolio" class="py-24 bg-brandDark/40 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-mono tracking-widest text-brandMint uppercase" data-ko="최근 실적" data-en="Recent Track Record" data-nl="Recente Ervaringen">최근 실적</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold" data-ko="검증된 수행 이력 (최근 3년)" data-en="Proven Track Record (Recent 3 Years)" data-nl="Bewezen Ervaringen (Afgelopen 3 Jaar)">검증된 수행 이력 (최근 3년)</h2>
       </div>
 
-      <div class="section-content">
-        <h2 class="headline">Onze Diensten</h2>
-        <p class="subtext">Wij sluiten naadloos aan op uw zakelijke behoeften en verbinden beide culturen en talen op professionele wijze.</p>
-        <div class="services-grid">
-          <div class="card">
-            <h3>📝 Technische & Zakelijke Vertalingen</h3>
-            <ul>
-              <li>• Commerciële Contracten, Statuten & Juridische Documenten</li>
-              <li>• Technische Handleidingen, Gidsen & Documentatie (IT / Automotive)</li>
-              <li>• Marketingmateriaal, Productcatalogi & Websitelokalisatie</li>
-              <li>• Hoogwaardige Documentvertaling voor Bedrijven</li>
-            </ul>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Interpretation Portfolio -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold border-b border-white/10 pb-3 flex items-center justify-between">
+            <span data-ko="통역 분야" data-en="Interpretation Projects" data-nl="Tolkprojecten">통역 분야</span>
+            <span class="text-xs text-brandMint font-mono uppercase">Interactive list</span>
+          </h3>
+          <div class="space-y-4">
+            <!-- Port Card 1 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1" data-ko="정부 및 VIP 의전" data-en="Government & VIP Escort" data-nl="Overheid & VIP Begeleiding">정부 및 VIP 의전</p>
+              <h4 class="text-base font-semibold text-white">
+                <span class="lang-ko">대한민국 장관 네덜란드 공식 방문 VIP 통역</span>
+                <span class="lang-en">Korean Minister’s official visit to the Netherlands</span>
+                <span class="lang-nl active-lang">Hoog bezoek Zuid-Koreaanse minister</span>
+              </h4>
+            </div>
+            <!-- Port Card 2 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1" data-ko="기관 및 비즈니스 미팅" data-en="Institution & Business Meeting" data-nl="Instituut & Zakelijke Meeting">기관 및 비즈니스 미팅</p>
+              <h4 class="text-base font-semibold text-white">
+                <span class="lang-ko">네덜란드 주요 박물관 인사 방문 비즈니스 통역</span>
+                <span class="lang-en">Museum personnel visit and corporate business meetings</span>
+                <span class="lang-nl active-lang">Zakelijke meetings museumpersoneel</span>
+              </h4>
+            </div>
+            <!-- Port Card 3 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1" data-ko="공기업 사령탑 의전" data-en="State-Owned Enterprise VIP" data-nl="Semi-Overheidsorganisatie VIP">공기업 사령탑 의전</p>
+              <h4 class="text-base font-semibold text-white">
+                <span class="lang-ko">공기업 사장 네덜란드 내빈 초청 및 순방 VIP 통역</span>
+                <span class="lang-en">Semi-Government CEO’s visit to the Netherlands</span>
+                <span class="lang-nl active-lang">VIP bezoek van een CEO van een semi-overheidsorganisatie</span>
+              </h4>
+            </div>
+            <!-- Port Card 4 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1" data-ko="법률 및 행정" data-en="Legal & Administration" data-nl="Juridisch & Bestuurlijk">법률 및 행정</p>
+              <h4 class="text-base font-semibold text-white">
+                <span class="lang-ko">네덜란드 법원 행정소송 전문 통역</span>
+                <span class="lang-en">Dutch court administrative lawsuit interpreter</span>
+                <span class="lang-nl active-lang">Bestuurlijke rechtszaak bij de Nederlandse rechtbank</span>
+              </h4>
+            </div>
+            <!-- Collapsible Extras -->
+            <div id="interpretation-more" class="hidden space-y-4 pt-1">
+              <div class="p-5 bg-white/5 rounded-xl border border-white/5">
+                <p class="text-brandMint text-xs font-semibold mb-1" data-ko="농업 & 교육" data-en="Agriculture & Education" data-nl="Landbouw & Onderwijs">농업 & 교육</p>
+                <h4 class="text-base font-semibold text-white">
+                  <span class="lang-ko">한국 농업인 단체 네덜란드 현지 시설 방문 통역 및 대학생 의료 분야 발표 통역</span>
+                  <span class="lang-en">Farmer group facility visits & health sector university presentations</span>
+                  <span class="lang-nl active-lang">Groepsbezoek van boeren & universitair medisch studentenproject</span>
+                </h4>
+              </div>
+              <div class="p-5 bg-white/5 rounded-xl border border-white/5">
+                <p class="text-brandMint text-xs font-semibold mb-1" data-ko="미디어 & 다큐" data-en="Media & Interview" data-nl="Media & Interview">미디어 & 다큐</p>
+                <h4 class="text-base font-semibold text-white">
+                  <span class="lang-ko">숲 관련 정책 인터넷 뉴스 인터뷰 통역 및 해외 입양아 가족 영상통화 통역</span>
+                  <span class="lang-en">Forest policy online interview & Video call between adoptees and birth family</span>
+                  <span class="lang-nl active-lang">Bosbeleid internet-interview & Videogesprekken geadopteerde met familie</span>
+                </h4>
+              </div>
+            </div>
+            <button onclick="toggleSection('interpretation-more', this)" class="text-brandMint text-xs font-semibold mt-2 hover:underline focus:outline-none">
+              <span data-ko="+ 더 보기" data-en="+ Show More" data-nl="+ Meer Weergeven">+ 더 보기</span>
+            </button>
           </div>
-          <div class="card">
-            <h3>🗣️ Professioneel Tolkwerk</h3>
-            <ul>
-              <li>• Zakelijke Besprekingen, Directievergaderingen & Technische Audits</li>
-              <li>• Europese Beurzen, Internationale Tentoonstellingen & Seminars</li>
-              <li>• Consecutief Tolken, Liaison Tolken en Zakelijke Begeleiding ter Plaatse</li>
-              <li>• Afstandstolken via Videoconferencing (Zoom / Teams)</li>
-            </ul>
+        </div>
+
+        <!-- Translation & Arrangement Portfolio -->
+        <div class="space-y-6">
+          <h3 class="text-xl font-bold border-b border-white/10 pb-3 flex items-center justify-between">
+            <span data-ko="번역 및 비즈니스 섭외 분야" data-en="Translation & Arrangement" data-nl="Vertalen & Coördinatie">번역 및 비즈니스 섭외 분야</span>
+            <span class="text-xs text-brandMint font-mono uppercase">Interactive list</span>
+          </h3>
+          <div class="space-y-4">
+            <!-- Port Card 1 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1" data-ko="의료 기기 및 사양서" data-en="Medical & Technical Specs" data-nl="Medisch & Technische Specificaties">의료 기기 및 사양서</p>
+              <h4 class="text-base font-semibold text-white">
+                <span class="lang-ko">의료용품 네덜란드어 정밀 사용 설명서 제작 및 번역</span>
+                <span class="lang-en">Dutch user manual of high-precision medical products</span>
+                <span class="lang-nl active-lang">Nederlandse handleiding van medisch product</span>
+              </h4>
+            </div>
+            <!-- Port Card 2 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1" data-ko="비즈니스 조율" data-en="Aviation & Business Matching" data-nl="Luchtvaart & Zakelijke Match">비즈니스 조율</p>
+              <h4 class="text-base font-semibold text-white">
+                <span class="lang-ko">항공분야 정부 부처 및 현지 유관 기업 접촉 & 섭외 지원</span>
+                <span class="lang-en">Arrangement and initial contact with Dutch government/aviation sector</span>
+                <span class="lang-nl active-lang">Contact gelegd met Nederlandse overheidsinstanties in luchtvaart</span>
+              </h4>
+            </div>
+            <!-- Port Card 3 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1" data-ko="영상 자막 현지화" data-en="Media Localization" data-nl="Media Lokalisatie">영상 자막 현지화</p>
+              <h4 class="text-base font-semibold text-white">
+                <span class="lang-ko">지상파 가족 예능 프로그램 및 음식 다큐멘터리 자막 번역</span>
+                <span class="lang-en">Subtitle localization for food-related documentaries and entertainment</span>
+                <span class="lang-nl active-lang">Ondertiteling van een voedseldocumentaire en Koreaanse TV show</span>
+              </h4>
+            </div>
+            <!-- Port Card 4 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1" data-ko="입양 아카이브 번역" data-en="Adoptee Communications" data-nl="Geadopteerde Communicatie">입양 아카이브 번역</p>
+              <h4 class="text-base font-semibold text-white">
+                <span class="lang-ko">해외 입양인 편지 및 패밀리 아카이브 복원 번역</span>
+                <span class="lang-en">Personal letters and family archival translation for adoptees</span>
+                <span class="lang-nl active-lang">Brieven vertaling voor geadopteerde en familie-archief</span>
+              </h4>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact">
-      <div class="lang-switcher">
-        <a href="index.html">KR</a> | <a href="en.html">EN</a> | <strong>NL</strong>
+  <!-- ==================== CONTACT SECTION (연락처) ==================== -->
+  <section id="contact" class="py-24 bg-gradient-to-b from-brandDark to-brandPurple relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-mono tracking-widest text-brandMint uppercase" data-ko="글로벌 협업 파트너" data-en="Get In Touch" data-nl="Neem Contact Op">글로벌 협업 파트너</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold" data-ko="소중한 프로젝트를 들려주세요" data-en="Start Your Journey With Us" data-nl="Neem Contact Op met Ons">소중한 프로젝트를 들려주세요</h2>
       </div>
 
-      <div class="section-content">
-        <div class="contact-wrapper">
-          <h2 class="headline">Laten We Samenwerken</h2>
-          <p class="subtext">Stuur uw projectdetails, planning en documenten per e-mail. Wij beoordelen uw aanvraag en sturen u binnen 24 uur een passende offerte.</p>
-          <a href="mailto:info@tonghada.nl" class="email-link">info@tonghada.nl</a>
-          <p style="color: #888; font-size: 14px;">www.tonghada.nl</p>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Contact Information Cards -->
+        <div class="space-y-6 lg:col-span-1">
+          <!-- Email Card -->
+          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-regular fa-envelope text-xl"></i>
+            </div>
+            <div>
+              <p class="text-xs text-textLight" data-ko="이메일 문의" data-en="E-mail Address" data-nl="E-mailadres">이메일 문의</p>
+              <a href="mailto:jinyoo.nl@outlook.com" class="text-base md:text-lg font-bold hover:text-brandMint transition">jinyoo.nl@outlook.com</a>
+            </div>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+            </div>
+            <div>
+              <p class="text-xs text-textLight" data-ko="네덜란드 및 글로벌 연락처" data-en="Mobile & Global" data-nl="Mobiel & Globaal">네덜란드 및 글로벌 연락처</p>
+              <a href="tel:+31621162435" class="text-base md:text-lg font-bold hover:text-brandMint transition">+31 (0)6 2116 2435</a>
+            </div>
+          </div>
+
+          <!-- KakaoTalk Card -->
+          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-solid fa-comment text-xl"></i>
+            </div>
+            <div>
+              <p class="text-xs text-textLight" data-ko="카카오톡 ID" data-en="KakaoTalk ID" data-nl="KakaoTalk ID">카카오톡 ID</p>
+              <p class="text-base md:text-lg font-bold">evenalso</p>
+            </div>
+          </div>
         </div>
-        <footer>
-          <p>© 2026 TONGHADA. Alle rechten voorbehouden. | Geregistreerd bij Mijndomein.</p>
-        </footer>
+
+        <!-- Consultation Form -->
+        <div class="lg:col-span-2 bg-white/5 p-8 rounded-2xl border border-white/5">
+          <h3 class="text-xl font-bold mb-6" data-ko="빠른 의뢰 상담 접수" data-en="Send Us a Message" data-nl="Stuur een Bericht">빠른 의뢰 상담 접수</h3>
+          <form onsubmit="handleFormSubmit(event)" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-semibold text-textLight mb-2" data-ko="의뢰자명/회사명" data-en="Name/Company" data-nl="Naam/Bedrijf">의뢰자명/회사명</label>
+                <input type="text" required class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-textLight mb-2" data-ko="연락처 또는 이메일" data-en="Contact info" data-nl="Contact info">연락처 또는 이메일</label>
+                <input type="text" required class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-textLight mb-2" data-ko="서비스 희망 분야" data-en="Service Field" data-nl="Onderwerp">서비스 희망 분야</label>
+              <select class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white">
+                <option value="translation" data-ko="전문 비즈니스 번역" data-en="Document Translation" data-nl="Vertalen">전문 비즈니스 번역</option>
+                <option value="interpretation" data-ko="비즈니스 / 수행 통역" data-en="Interpretation" data-nl="Tolken">비즈니스 / 수행 통역</option>
+                <option value="consulting" data-ko="현지 섭외 및 차량 코디네이션" data-en="Arrangement & Driving" data-nl="Coördinatie & Chauffeur">현지 섭외 및 차량 코디네이션</option>
+                <option value="etc" data-ko="기타 문의" data-en="General Inquiry" data-nl="Overig">기타 문의</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-textLight mb-2" data-ko="상세 요청 내용" data-en="Project Details" data-nl="Bericht">상세 요청 내용</label>
+              <textarea rows="4" required class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white"></textarea>
+            </div>
+            <button type="submit" class="w-full py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300"
+                    data-ko="의뢰 접수하기" data-en="Submit Request" data-nl="Verzenden">
+              의뢰 접수하기
+            </button>
+          </form>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </div>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 bg-brandDark border-t border-white/5 text-xs md:text-sm text-textLight">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+      <div class="space-y-2 text-center md:text-left">
+        <p class="font-bold text-white">TONGHADA Translation & Consulting</p>
+        <p>Copyright &copy; 2026 TONGHADA. All rights reserved.</p>
+      </div>
+      <div class="flex space-x-6">
+        <a href="https://www.linkedin.com/in/jinyoo/" target="_blank" class="hover:text-brandMint text-lg transition"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:jinyoo.nl@outlook.com" class="hover:text-brandMint text-lg transition"><i class="fa-regular fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
 
+  <!-- ==================== JAVASCRIPT: LANG SWITCHER & INTERACTIVE ==================== -->
+  <script>
+    function toggleSection(elementId, btn) {
+      const element = document.getElementById(elementId);
+      if (element.classList.contains('hidden')) {
+        element.classList.remove('hidden');
+        btn.querySelector('[data-ko]').innerText = "- 접기";
+        btn.querySelector('[data-en]').innerText = "- Collapse";
+        btn.querySelector('[data-nl]').innerText = "- Inklappen";
+      } else {
+        element.classList.add('hidden');
+        btn.querySelector('[data-ko]').innerText = "+ 더 보기";
+        btn.querySelector('[data-en]').innerText = "+ Show More";
+        btn.querySelector('[data-nl]').innerText = "+ Meer Weergeven";
+      }
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      alert("감사합니다! 의뢰가 성공적으로 전달되었습니다. (jinyoo.nl@outlook.com으로 빠르게 연락드리겠습니다.)");
+    }
+  </script>
 </body>
 </html>
