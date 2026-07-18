@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TONGHADA - Connecting Korea and the Netherlands</title>
+  <title>TONGHADA - Translation & Interpretation Consulting</title>
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts & FontAwesome Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
@@ -12,128 +14,580 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { brandDark: '#0A0E1A', brandPurple: '#1A1235', brandMint: '#00F2C4', textLight: '#9CA3AF' },
-          fontFamily: { sans: ['Poppins', 'Noto Sans KR', 'sans-serif'] }
+          colors: {
+            brandDark: '#0A0E1A',     /* Deep Navy */
+            brandPurple: '#1A1235',   /* Midnight Purple */
+            brandMint: '#00F2C4',     /* Accent Mint */
+            brandGray: '#F3F4F6',     /* Light Gray */
+            textDark: '#111827',
+            textLight: '#9CA3AF'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Noto Sans KR', 'sans-serif'],
+          }
         }
       }
     }
   </script>
   <style>
     html { scroll-behavior: smooth; }
-    body { word-break: keep-all; } /* Prevents awkward English breaks on mobile */
-    .logo-glow { filter: drop-shadow(0px 0px 4px rgba(255,255,255,0.9)) drop-shadow(0px 0px 1px rgba(255,255,255,1)); }
-    .collapsible-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, opacity 0.3s ease; opacity: 0; }
-    .collapsible-content.expanded { max-height: 800px; opacity: 1; }
-    .btn-toggle { color: #00F2C4 !important; cursor: pointer; }
-    .btn-toggle i { display: inline-block; transition: transform 0.3s ease; }
-    .glow-effect:hover { box-shadow: 0 0 20px rgba(0, 242, 196, 0.4); transition: all 0.3s ease; }
+    
+    /* Word-break strategy for clean mobile typography alignment */
+    body {
+      word-break: keep-all;
+    }
+    
+    .glow-effect:hover {
+      box-shadow: 0 0 20px rgba(0, 242, 196, 0.4);
+      transition: all 0.3s ease;
+    }
+    
+    /* Precision Glow Filter for Transparent PNG Logo */
+    .logo-glow {
+      filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.9)) 
+              drop-shadow(0px 0px 1px rgba(255, 255, 255, 1));
+    }
+    
+    /* Collapsible Content Animation */
+    .collapsible-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .collapsible-content.expanded {
+      max-height: 600px;
+      opacity: 1;
+    }
+
+    /* Mint Toggle Buttons styling */
+    .btn-toggle {
+      color: #00F2C4 !important;
+      transition: opacity 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-toggle:hover {
+      opacity: 0.8;
+    }
+    .btn-toggle:focus {
+      outline: none;
+      color: #00F2C4 !important;
+    }
+    .btn-toggle i {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
   </style>
 </head>
 <body class="bg-brandDark text-white font-sans antialiased selection:bg-brandMint selection:text-brandDark">
 
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
   <header class="fixed top-0 left-0 w-full z-50 bg-brandDark/85 backdrop-blur-md border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-      <a href="en.html" class="flex items-center">
+      <!-- LOGO -->
+      <a href="#" class="flex items-center">
         <img src="logo.png" alt="TONGHADA" class="h-10 md:h-12 w-auto object-contain logo-glow">
       </a>
+
+      <!-- NAVIGATION & LANGUAGE SWITCHER -->
       <div class="flex items-center space-x-4 md:space-x-8">
         <nav class="hidden lg:flex space-x-6 text-sm font-medium text-textLight">
-          <a href="#about" class="hover:text-brandMint transition">About</a>
+          <a href="#about" class="hover:text-brandMint transition">About Us</a>
           <a href="#profile" class="hover:text-brandMint transition">Profile</a>
           <a href="#services" class="hover:text-brandMint transition">Services</a>
-          <a href="#portfolio" class="hover:text-brandMint transition">Portfolio</a>
+          <a href="#portfolio" class="hover:text-brandMint transition">Experience</a>
           <a href="#contact" class="hover:text-brandMint transition">Contact</a>
         </nav>
+
+        <!-- Static Multi-language Navigation Buttons -->
         <div class="flex items-center bg-white/5 p-1 rounded-full border border-white/10 text-xs shrink-0">
-          <a href="index.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition">KR</a>
-          <a href="en.html" class="px-3.5 py-1.5 rounded-full font-bold bg-brandMint text-brandDark">EN</a>
-          <a href="nl.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition">NL</a>
+          <a href="index.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition duration-200">KR</a>
+          <a href="en.html" class="px-3.5 py-1.5 rounded-full font-bold bg-brandMint text-brandDark transition duration-200">EN</a>
+          <a href="nl.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition duration-200">NL</a>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- ==================== HERO SECTION ==================== -->
   <section class="pt-36 pb-20 md:pt-48 md:pb-36 bg-gradient-to-b from-brandPurple via-brandDark to-brandDark relative overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,242,196,0.08),transparent_50%)]"></div>
     <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-      <span class="inline-block px-4 py-1.5 rounded-full bg-brandMint/10 border border-brandMint/30 text-brandMint text-xs font-semibold tracking-wider uppercase mb-6">Translation & Consulting</span>
-      <h1 class="text-3xl md:text-6xl font-extrabold tracking-tight leading-snug md:leading-tight mb-6">Connecting Korea and the Netherlands.<br><span class="text-brandMint">Professional</span> Language Solutions.</h1>
-      <p class="text-sm md:text-lg text-textLight max-w-2xl mx-auto mb-10 leading-relaxed">Beyond literal translation, an ex-corporate recruiter localizes your high-value business context with precise industry understanding.</p>
+      <span class="inline-block px-4 py-1.5 rounded-full bg-brandMint/10 border border-brandMint/30 text-brandMint text-xs font-semibold tracking-wider uppercase mb-6">
+        Tonghada Translation & Consulting
+      </span>
+      
+      <h1 class="text-3xl md:text-6xl font-extrabold tracking-tight leading-snug md:leading-tight max-w-4xl mx-auto mb-6">
+        Connecting Korea and the Netherlands. <span class="text-brandMint">Professional</span> Korean-Dutch Translation.
+      </h1>
+
+      <p class="text-sm md:text-lg text-textLight max-w-2xl mx-auto mb-10 leading-relaxed px-2">
+        A trusted partner providing precise, tailored, and highly reliable linguistic solutions for your business success. Guided by an ex-recruiter with solid industry understanding.
+      </p>
+
       <div class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xs sm:max-w-none mx-auto">
-        <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300 text-center text-sm">Get a Quote ➔</a>
-        <a href="#services" class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 hover:border-brandMint/50 font-bold rounded-lg text-white transition duration-300 text-center text-sm">Our Services</a>
+        <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300 text-center text-sm">
+          Get a Quote ➔
+        </a>
+        <a href="#services" class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 hover:border-brandMint/50 font-bold rounded-lg text-white transition duration-300 text-center text-sm">
+          Our Services
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Content sections shortened for brevity, structure follows index.html -->
+  <!-- ==================== ABOUT US ==================== -->
   <section id="about" class="py-20 border-y border-white/5 bg-brandDark relative">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <!-- Philosophy Card -->
         <div class="relative bg-gradient-to-br from-brandPurple to-brandDark p-6 md:p-8 rounded-2xl border border-white/5 shadow-2xl">
-          <div class="space-y-6">
+          <div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-brandMint"></div>
+          <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-brandMint"></div>
+          <div class="space-y-6 py-4 md:py-6">
             <h3 class="text-brandMint font-mono text-sm tracking-widest uppercase">Philosophy</h3>
-            <blockquote class="text-lg md:text-2xl font-light italic leading-relaxed text-gray-200">"Connecting the minds of people who speak different languages and wish to understand one another."</blockquote>
+            <blockquote class="text-lg md:text-2xl font-light italic leading-relaxed text-gray-200">
+              "‘Tonghada’ is a Korean word meaning ‘being on the same page’. My mission is to connect the minds of people who speak different languages and wish to understand one another."
+            </blockquote>
             <p class="text-sm text-brandMint font-medium">— TONGHADA Translation & Consulting</p>
           </div>
         </div>
-        <div class="space-y-6">
-          <h2 class="text-2xl md:text-4xl font-extrabold">Tonghada Consulting</h2>
-          <p class="text-textLight text-sm md:text-lg leading-relaxed">Providing professional Korean-English-Dutch interpretation and translation since 2009, we deliver tailor-made linguistic bridges for your business success.</p>
+
+        <!-- Description -->
+        <div class="space-y-6 md:space-y-8">
+          <div class="space-y-3">
+            <span class="text-xs font-mono tracking-widest text-brandMint uppercase">Company Introduction</span>
+            <h2 class="text-2xl md:text-4xl font-extrabold">Tonghada Translation and Consulting</h2>
+          </div>
+          
+          <div class="text-textLight leading-relaxed space-y-4 md:space-y-6 text-sm md:text-lg">
+            <p>The name ‘Tonghada’ represents connecting the minds of people who speak different languages and wish to align their visions together.</p>
+            <p>With professional experience in Korean-English-Dutch interpretation and translation since 2009, I am committed to delivering the highest quality of service to you.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Portfolio Section with localized toggle labels -->
-  <section id="portfolio" class="py-20 bg-brandDark/40">
+  <!-- ==================== REPRESENTATIVE PROFILE ==================== -->
+  <section id="profile" class="py-20 bg-brandDark/50">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12"><h2 class="text-2xl md:text-4xl font-extrabold">Proven Track Record</h2></div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div class="space-y-4">
-          <h3 class="text-lg md:text-xl font-bold border-b border-white/10 pb-3">Interpretation</h3>
-          <div class="p-5 bg-white/5 rounded-xl">
-            <p class="text-brandMint text-xs font-semibold mb-1">Government & VIP</p>
-            <h4 class="text-sm md:text-base text-white">Korean Minister’s official visit to the Netherlands VIP escort</h4>
+      <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
+        <span class="text-xs font-mono tracking-widest text-brandMint uppercase">Profile Summary</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold">The Foundation of Expertise</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <!-- Education & Military -->
+        <div class="bg-brandPurple/30 border border-white/5 p-6 md:p-8 rounded-2xl space-y-6">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-solid fa-graduation-cap text-xl"></i>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold">Education & Military</h3>
           </div>
-          <div id="interpretation-more" class="collapsible-content space-y-4">
-            <div class="p-5 bg-white/5 rounded-xl"><p class="text-brandMint text-xs font-semibold mb-1">Court & Legal</p><h4 class="text-sm text-white">Dutch court administrative lawsuit interpretation</h4></div>
-          </div>
-          <button onclick="toggleSection('interpretation-more', this)" class="btn-toggle inline-flex items-center space-x-2 text-sm font-semibold mt-2 focus:outline-none">
-            <span class="btn-text">Show More</span><i class="fa-solid fa-chevron-down text-xs"></i>
-          </button>
+          <ul class="space-y-4 text-textLight text-xs md:text-base">
+            <li class="space-y-1">
+              <p class="text-white font-semibold">VU University Amsterdam — Master of Science</p>
+              <p class="text-xs">Business Administration (Specialization: Human Resource Management)</p>
+            </li>
+            <li class="space-y-1">
+              <p class="text-white font-semibold">VU University Amsterdam — Bachelor of Science</p>
+              <p class="text-xs">Business Administration (Program taught in Dutch)</p>
+            </li>
+            <li class="space-y-1">
+              <p class="text-white font-semibold">Republic of Korea Navy Officer (OCS)</p>
+              <p class="text-xs">Served as Combat Information Officer, Flag aide, and Interpretation Officer</p>
+            </li>
+          </ul>
         </div>
-        <!-- Translation Column structure matches index.html -->
+
+        <!-- Corporate Experience -->
+        <div class="bg-brandPurple/30 border border-white/5 p-6 md:p-8 rounded-2xl space-y-6">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-solid fa-briefcase text-xl"></i>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold">Professional Experience</h3>
+          </div>
+          <ul class="space-y-4 text-textLight text-xs md:text-base">
+            <li class="space-y-1">
+              <p class="text-white font-semibold">7 Years as Corporate Recruiter (2018-2025)</p>
+              <p class="text-xs">Recruiter & Consultant specialized in Offshore, Space & Renewable Energy, Semiconductor Equipment</p>
+            </li>
+            <li class="space-y-1">
+              <p class="text-white font-semibold">Freelance Interpreter & Translator (2009 - Present)</p>
+              <p class="text-xs">Specialized in Korean-English-Dutch business matching, technical data, and legal translation</p>
+            </li>
+            <li class="space-y-1">
+              <p class="text-white font-semibold">Founded Tonghada Translation and Consulting (2026)</p>
+              <p class="text-xs">Connecting and supporting Korean and European companies' strategic expansion</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer class="py-12 bg-brandDark border-t border-white/5 text-xs text-textLight">
+  <!-- ==================== SERVICES OVERVIEW ==================== -->
+  <section id="services" class="py-20 bg-brandDark relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
+        <span class="text-xs font-mono tracking-widest text-brandMint uppercase">Service Portfolio</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold">Services Overview</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <!-- Service 1: Interpretation -->
+        <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3 class="text-lg font-bold">(Consecutive) Interpretation</h3>
+            <ul class="space-y-2 text-xs md:text-sm text-textLight">
+              <li>• Business meetings / Corporate negotiations</li>
+              <li>• VIP escort & Delegation accompaniment</li>
+              <li>• Group study visits & Government inspections</li>
+              <li>• Hospital, Municipality, School counselling</li>
+              <li>• Video conferences & Media interviews</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 2: Translation -->
+        <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-file-invoice"></i>
+            </div>
+            <h3 class="text-lg font-bold">Document & Media Translation</h3>
+            <ul class="space-y-2 text-xs md:text-sm text-textLight">
+              <li>• Business documents (presentations, catalogues)</li>
+              <li>• Patents and technical instruction sheets</li>
+              <li>• Official letters, emails & business agreements</li>
+              <li>• Subtitles (TV programs, documentaries, news)</li>
+              <li>• Scientific research papers & legal drafts</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Service 3: Driving -->
+        <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-car"></i>
+            </div>
+            <h3 class="text-lg font-bold">Driving (Upon Request)</h3>
+            <p class="text-xs md:text-sm text-textLight leading-relaxed">
+              We provide comfortable, on-site mobility. Able to drive vehicles up to 9 passengers to escort your team and VIP clients safely across European sites, saving logistics, planning, and extra driver costs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 4: Arrangement -->
+        <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-10 h-10 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3 class="text-lg font-bold">Arrangement & Outreach</h3>
+            <p class="text-xs md:text-sm text-textLight leading-relaxed">
+              Facilitating initial contact and outreach with Dutch government departments, aviation companies, and key European corporate targets to arrange official visits, interviews, and business matchmaking.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PORTFOLIO & WORK EXPERIENCE ==================== -->
+  <section id="portfolio" class="py-20 bg-brandDark/40 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
+        <span class="text-xs font-mono tracking-widest text-brandMint uppercase">Track Record</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold">Interpretation & Translation Experience</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Interpretation Portfolio -->
+        <div class="space-y-6">
+          <h3 class="text-lg md:text-xl font-bold border-b border-white/10 pb-3">
+            <span>Interpretation (Recent 3 Years)</span>
+          </h3>
+          <div class="space-y-4">
+            <!-- Port Card 1 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1">Government & VIP</p>
+              <h4 class="text-sm md:text-base font-semibold text-white">Korean Minister’s official visit to the Netherlands VIP accompaniment</h4>
+            </div>
+            <!-- Port Card 2 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1">Business & Institution</p>
+              <h4 class="text-sm md:text-base font-semibold text-white">Museum personnel visit and business meeting</h4>
+            </div>
+            <!-- Port Card 3 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1">Semi-Government VIP</p>
+              <h4 class="text-sm md:text-base font-semibold text-white">Semi-Government CEO’s visit to the Netherlands</h4>
+            </div>
+            <!-- Port Card 4 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1">Court & Legal</p>
+              <h4 class="text-sm md:text-base font-semibold text-white">Dutch court administrative lawsuit interpreter</h4>
+            </div>
+            
+            <!-- Collapsible Section -->
+            <div id="interpretation-more" class="collapsible-content space-y-4">
+              <div class="p-5 bg-white/5 rounded-xl border border-white/5">
+                <p class="text-brandMint text-xs font-semibold mb-1">Agriculture & Education</p>
+                <h4 class="text-sm md:text-base font-semibold text-white">Farmer group visit, and university student project visit regarding health and well-being sector</h4>
+              </div>
+              <div class="p-5 bg-white/5 rounded-xl border border-white/5">
+                <p class="text-brandMint text-xs font-semibold mb-1">Media & Family</p>
+                <h4 class="text-sm md:text-base font-semibold text-white">Internet media interview regarding forest policy, and video calls between adoptees and birth families</h4>
+              </div>
+            </div>
+            
+            <!-- Toggle Button -->
+            <button onclick="toggleSection('interpretation-more', this)" class="btn-toggle inline-flex items-center space-x-2 text-sm font-semibold mt-2 focus:outline-none">
+              <span class="btn-text">Show More</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Translation & Arrangement Portfolio -->
+        <div class="space-y-6">
+          <h3 class="text-lg md:text-xl font-bold border-b border-white/10 pb-3">
+            <span>Translation & Arrangements</span>
+          </h3>
+          <div class="space-y-4">
+            <!-- Port Card 1 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1">Medical Device & User Manuals</p>
+              <h4 class="text-sm md:text-base font-semibold text-white">Dutch user manual translation and adaptation for precision medical product</h4>
+            </div>
+            <!-- Port Card 2 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1">Outreach & Coordination</p>
+              <h4 class="text-sm md:text-base font-semibold text-white">Aviation sector: initial contact and meeting arrangement with the Dutch government & aerospace industries</h4>
+            </div>
+            <!-- Port Card 3 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1">Media Subtitling</p>
+              <h4 class="text-sm md:text-base font-semibold text-white">Subtitle translation and synchronization for family TV shows and food-related documentaries</h4>
+            </div>
+            <!-- Port Card 4 -->
+            <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
+              <p class="text-brandMint text-xs font-semibold mb-1">Adoptee Archive</p>
+              <h4 class="text-sm md:text-base font-semibold text-white">Personal letters and historical dossier translation for adoptees</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact" class="py-20 bg-gradient-to-b from-brandDark to-brandPurple relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
+        <span class="text-xs font-mono tracking-widest text-brandMint uppercase">Global Partnership</span>
+        <h2 class="text-2xl md:text-4xl font-extrabold">Tell Us About Your Project</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+        <!-- Contact Info -->
+        <div class="space-y-4 md:space-y-6 lg:col-span-1">
+          <!-- Email Card -->
+          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-regular fa-envelope text-xl"></i>
+            </div>
+            <div class="min-w-0">
+              <p class="text-xs text-textLight">E-mail Address</p>
+              <a href="mailto:jinyoo.nl@outlook.com" class="text-sm md:text-lg font-bold hover:text-brandMint transition block truncate">jinyoo.nl@outlook.com</a>
+            </div>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+            </div>
+            <div>
+              <p class="text-xs text-textLight">Mobile (Dutch / Global)</p>
+              <a href="tel:+31621162435" class="text-sm md:text-lg font-bold hover:text-brandMint transition">+31 (0)6 2116 2435</a>
+            </div>
+          </div>
+
+          <!-- KakaoTalk Card -->
+          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-solid fa-comment text-xl"></i>
+            </div>
+            <div>
+              <p class="text-xs text-textLight">KakaoTalk ID</p>
+              <p class="text-sm md:text-lg font-bold">evenalso</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consultation Form with Web3Forms Live Email Integration -->
+        <div class="lg:col-span-2 bg-white/5 p-6 md:p-8 rounded-2xl border border-white/5 relative">
+          
+          <!-- Web3Forms Form -->
+          <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6 transition-all duration-300">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+            <h3 class="text-lg md:text-xl font-bold mb-6">Quick Consultation Form</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-xs font-semibold text-textLight mb-2">Name / Company Name</label>
+                <input type="text" name="name" required class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-textLight mb-2">Contact Info (Email/Phone)</label>
+                <input type="text" name="contact" required class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-textLight mb-2">Type of Service</label>
+              <select name="subject" class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white">
+                <option value="전문 비즈니스 번역">Professional Business Translation</option>
+                <option value="비즈니스 / 수행 통역">Business / Escort Interpretation</option>
+                <option value="현지 섭외 및 차량 코디네이션">Local Arrangement & Driving Service</option>
+                <option value="기타 문의">General Inquiry</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-textLight mb-2">Project Details</label>
+              <textarea name="message" rows="4" required class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white"></textarea>
+            </div>
+            
+            <button type="submit" id="submit-btn" class="w-full py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300 flex items-center justify-center space-x-2 text-sm md:text-base">
+              <span id="btn-text">Submit Request ➔</span>
+              <svg id="loading-spinner" class="hidden animate-spin h-5 w-5 text-brandDark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </button>
+          </form>
+
+          <!-- Success Card -->
+          <div id="success-card" class="hidden flex-col items-center justify-center text-center py-12 px-4 space-y-6 animate-fade-in">
+            <div class="w-20 h-20 bg-brandMint/10 rounded-full flex items-center justify-center text-brandMint animate-bounce">
+              <i class="fa-solid fa-circle-check text-5xl"></i>
+            </div>
+            <h3 class="text-xl md:text-2xl font-extrabold text-white">Your Request Has Been Received!</h3>
+            <p class="text-textLight max-w-md leading-relaxed text-sm md:text-base">
+              The consultant will review your inquiry and get back to you with an estimated quote and strategy plan **within 24 hours**.
+            </p>
+            <button onclick="resetContactForm()" class="px-6 py-2.5 bg-white/5 border border-white/10 hover:border-brandMint/40 rounded-lg text-xs font-bold text-gray-300 hover:text-brandMint transition">
+              Submit Another Inquiry
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 bg-brandDark border-t border-white/5 text-xs md:text-sm text-textLight">
     <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-      <p class="font-bold text-white">© 2026 TONGHADA Translation & Consulting</p>
+      <div class="space-y-2 text-center md:text-left">
+        <p class="font-bold text-white">TONGHADA Translation & Consulting</p>
+        <p>Copyright &copy; 2026 TONGHADA. All rights reserved.</p>
+      </div>
       <div class="flex space-x-6 items-center">
-        <a href="https://linkedin.com/in/jinyoo" target="_blank" class="text-brandMint text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="mailto:jinyoo.nl@outlook.com" class="text-brandMint text-2xl transition"><i class="fa-regular fa-envelope"></i></a>
+        <a href="https://linkedin.com/in/jinyoo" target="_blank" class="hover:text-brandMint text-2xl transition" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:jinyoo.nl@outlook.com" class="hover:text-brandMint text-2xl transition" title="Email"><i class="fa-regular fa-envelope"></i></a>
       </div>
     </div>
   </footer>
 
+  <!-- ==================== JAVASCRIPT ==================== -->
   <script>
-    function toggleSection(id, btn) {
-      const el = document.getElementById(id);
-      const txt = btn.querySelector('.btn-text');
-      const icon = btn.querySelector('i');
-      if (el.classList.contains('expanded')) {
-        el.classList.remove('expanded');
-        txt.innerText = "Show More";
-        icon.style.transform = "rotate(0deg)";
+    function toggleSection(elementId, btn) {
+      const element = document.getElementById(elementId);
+      const btnText = btn.querySelector('.btn-text');
+      const arrowIcon = btn.querySelector('i');
+      
+      if (element.classList.contains('expanded')) {
+        element.classList.remove('expanded');
+        btnText.innerText = "Show More";
+        arrowIcon.style.transform = "rotate(0deg)";
       } else {
-        el.classList.add('expanded');
-        txt.innerText = "Collapse";
-        icon.style.transform = "rotate(180deg)";
+        element.classList.add('expanded');
+        btnText.innerText = "Collapse";
+        arrowIcon.style.transform = "rotate(180deg)";
       }
     }
-    // Web3Forms script follows index.html logic with EN alerts
+
+    async function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const form = document.getElementById('contact-form');
+      const btnText = document.getElementById('btn-text');
+      const spinner = document.getElementById('loading-spinner');
+      const submitBtn = document.getElementById('submit-btn');
+      
+      btnText.innerText = "Sending Inquiry...";
+      spinner.classList.remove('hidden');
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-70');
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          form.classList.add('hidden');
+          document.getElementById('success-card').classList.remove('hidden');
+          document.getElementById('success-card').classList.add('flex');
+        } else {
+          alert("An error occurred while sending. Please contact jinyoo.nl@outlook.com directly.");
+          resetSubmitButton();
+        }
+      } catch (error) {
+        alert("Please check your internet connection.");
+        resetSubmitButton();
+      }
+    }
+
+    function resetSubmitButton() {
+      const btnText = document.getElementById('btn-text');
+      const spinner = document.getElementById('loading-spinner');
+      const submitBtn = document.getElementById('submit-btn');
+      
+      btnText.innerText = "Submit Request ➔";
+      spinner.classList.add('hidden');
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-70');
+    }
+
+    function resetContactForm() {
+      const form = document.getElementById('contact-form');
+      const successCard = document.getElementById('success-card');
+      
+      form.reset();
+      resetSubmitButton();
+      
+      successCard.classList.add('hidden');
+      successCard.classList.remove('flex');
+      form.classList.remove('hidden');
+    }
   </script>
 </body>
 </html>
+
