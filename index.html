@@ -74,17 +74,19 @@
 </head>
 <body class="bg-brandDark text-white font-sans antialiased selection:bg-brandMint selection:text-brandDark">
 
-  <!-- ==================== HEADER & NAVIGATION ==================== -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-brandDark/85 backdrop-blur-md border-b border-white/5 py-2">
+    <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-brandDark/85 backdrop-blur-md border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-      <!-- LOGO -->
-      <a href="#" class="flex items-center space-x-2">
-        <img src="logo.png" class="h-12 w-auto object-contain brightness-0 invert" alt="TONGHADA">
+      
+      <!-- 👇 로고 고유 색상을 살리는 투명 화이트 캡슐 배지 (h-12 크기 유지용) -->
+      <a href="#" class="flex items-center bg-white/95 hover:bg-white px-4 py-1.5 rounded-xl shadow-lg transition duration-300">
+        <img src="logo.png" alt="TONGHADA" class="h-10 md:h-12 w-auto object-contain">
       </a>
 
       <!-- NAVIGATION & LANGUAGE SWITCHER -->
       <div class="flex items-center space-x-8">
-        <nav class="hidden md:flex space-x-6 text-sm font-medium text-textLight">
+        <!-- 네비게이션 (모바일에서는 숨김, 테블릿 이상 노출) -->
+        <nav class="hidden lg:flex space-x-6 text-sm font-medium text-textLight">
           <a href="#about" class="hover:text-brandMint transition">회사 소개</a>
           <a href="#profile" class="hover:text-brandMint transition">약력</a>
           <a href="#services" class="hover:text-brandMint transition">서비스</a>
@@ -94,11 +96,12 @@
 
         <!-- 정적 다국어 이동 단추 -->
         <div class="flex items-center bg-white/5 p-1 rounded-full border border-white/10 text-xs">
-          <a href="index.html" class="px-3 py-1.5 rounded-full font-bold bg-brandMint text-brandDark">KR</a>
-          <a href="en.html" class="px-3 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition">EN</a>
-          <a href="nl.html" class="px-3 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition">NL</a>
+          <a href="index.html" class="px-3.5 py-1.5 rounded-full font-bold bg-brandMint text-brandDark transition duration-200">KR</a>
+          <a href="en.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition duration-200">EN</a>
+          <a href="nl.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition duration-200">NL</a>
         </div>
       </div>
+
     </div>
   </header>
 
