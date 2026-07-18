@@ -31,11 +31,24 @@
   </script>
   <style>
     html { scroll-behavior: smooth; }
+    
+    /* 🛠️ 한국어 타이포그래피 핵심 치트키: 단어 단위 줄바꿈 강제 설정 */
+    body {
+      word-break: keep-all;
+    }
+    
     .glow-effect:hover {
       box-shadow: 0 0 20px rgba(0, 242, 196, 0.4);
       transition: all 0.3s ease;
     }
-    /* 더보기 자연스러운 애니메이션을 위한 최소 세팅 */
+    
+    /* 🛠️ 투명 로고 가시성 확보를 위한 초정밀 2중 아웃라인 화이트 섀도우 */
+    .logo-glow {
+      filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.9)) 
+              drop-shadow(0px 0px 1px rgba(255, 255, 255, 1));
+    }
+    
+    /* 더보기 자연스러운 애니메이션 */
     .collapsible-content {
       max-height: 0;
       overflow: hidden;
@@ -43,55 +56,41 @@
       opacity: 0;
     }
     .collapsible-content.expanded {
-      max-height: 500px; /* 여유로운 최대 높이 */
+      max-height: 600px;
       opacity: 1;
     }
 
-    /* 기존 스타일 수정 및 추가 */
-.btn-toggle {
-  color: #00F2C4 !important; /* 항상 민트색 고정 */
-  transition: opacity 0.2s ease;
-  cursor: pointer;
-}
-
-.btn-toggle:hover {
-  opacity: 0.7; /* 색상을 바꾸는 대신 살짝 투명하게 하여 '눌림' 피드백 제공 */
-}
-
-/* 포커스(클릭 후) 시 하얗게 변하는 브라우저 기본 효과 방지 */
-.btn-toggle:focus {
-  outline: none;
-  color: #00F2C4 !important;
-}
-
-/* 화살표 회전 애니메이션 */
-.btn-toggle i {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-    /* 투명 PNG 로고 외곽선만 인식해서 살려내는 마법의 후광 효과 */
-.logo-glow {
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.85)) 
-          drop-shadow(0 0 1px rgba(255, 255, 255, 0.95));
-}
-
+    /* 🛠️ 펼치기/접기 버튼 민트색 고정 및 호버 이펙트 */
+    .btn-toggle {
+      color: #00F2C4 !important;
+      transition: opacity 0.2s ease;
+      cursor: pointer;
+    }
+    .btn-toggle:hover {
+      opacity: 0.8;
+    }
+    .btn-toggle:focus {
+      outline: none;
+      color: #00F2C4 !important;
+    }
+    .btn-toggle i {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
   </style>
 </head>
 <body class="bg-brandDark text-white font-sans antialiased selection:bg-brandMint selection:text-brandDark">
 
-    <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
   <header class="fixed top-0 left-0 w-full z-50 bg-brandDark/85 backdrop-blur-md border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-      
+      <!-- LOGO (투명화된 PNG의 외곽선 뒤에만 은은한 후광을 주어 원래 로고 색상을 100% 살립니다) -->
       <a href="#" class="flex items-center">
-  <!-- h-12 크기를 유지하면서, 은은한 후광(logo-glow)을 줍니다 -->
-  <img src="logo.png" alt="TONGHADA" class="h-10 md:h-12 w-auto object-contain logo-glow">
-</a>
+        <img src="logo.png" alt="TONGHADA" class="h-10 md:h-12 w-auto object-contain logo-glow">
+      </a>
 
       <!-- NAVIGATION & LANGUAGE SWITCHER -->
-      <div class="flex items-center space-x-8">
-        <!-- 네비게이션 (모바일에서는 숨김, 테블릿 이상 노출) -->
+      <div class="flex items-center space-x-4 md:space-x-8">
         <nav class="hidden lg:flex space-x-6 text-sm font-medium text-textLight">
           <a href="#about" class="hover:text-brandMint transition">회사 소개</a>
           <a href="#profile" class="hover:text-brandMint transition">약력</a>
@@ -100,38 +99,39 @@
           <a href="#contact" class="hover:text-brandMint transition">연락처</a>
         </nav>
 
-        <!-- 정적 다국어 이동 단추 -->
-        <div class="flex items-center bg-white/5 p-1 rounded-full border border-white/10 text-xs">
+        <!-- 정적 다국어 이동 단추 (클릭 영역 및 크기 모바일 최적화) -->
+        <div class="flex items-center bg-white/5 p-1 rounded-full border border-white/10 text-xs shrink-0">
           <a href="index.html" class="px-3.5 py-1.5 rounded-full font-bold bg-brandMint text-brandDark transition duration-200">KR</a>
           <a href="en.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition duration-200">EN</a>
           <a href="nl.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition duration-200">NL</a>
         </div>
       </div>
-
     </div>
   </header>
 
   <!-- ==================== HERO SECTION ==================== -->
-  <section class="pt-40 pb-24 md:pt-48 md:pb-36 bg-gradient-to-b from-brandPurple via-brandDark to-brandDark relative overflow-hidden">
+  <section class="pt-36 pb-20 md:pt-48 md:pb-36 bg-gradient-to-b from-brandPurple via-brandDark to-brandDark relative overflow-hidden">
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,242,196,0.08),transparent_50%)]"></div>
     <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
       <span class="inline-block px-4 py-1.5 rounded-full bg-brandMint/10 border border-brandMint/30 text-brandMint text-xs font-semibold tracking-wider uppercase mb-6">
         통하다 통번역 컨설팅
       </span>
       
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight max-w-4xl mx-auto mb-8">
+      <!-- 🛠️ 모바일 제목 폰트 스케일을 text-3xl로 정돈하고 모바일에서 줄바꿈이 깔끔하게 떨어지도록 조절 -->
+      <h1 class="text-3xl md:text-6xl font-extrabold tracking-tight leading-snug md:leading-tight max-w-4xl mx-auto mb-6">
         비즈니스의 맥락을 이어 성공을 <span class="text-brandMint">통하다</span>
       </h1>
 
-      <p class="text-base md:text-lg text-textLight max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p class="text-sm md:text-lg text-textLight max-w-2xl mx-auto mb-10 leading-relaxed px-2">
         단순한 언어 번역을 넘어, 7년 경력의 글로벌 테크 리크루터 출신 전문가가 비즈니스의 깊은 가치와 맥락을 고스란히 현지화하여 전달합니다.
       </p>
 
-      <div class="flex justify-center space-x-4">
-        <a href="#contact" class="px-8 py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300">
+      <!-- 🛠️ 모바일에서 가로 폭 깨짐 없이 세로로 깔끔하게 정렬되는 반응형 메인 버튼 셋 -->
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xs sm:max-w-none mx-auto">
+        <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300 text-center text-sm md:text-base">
           무료 견적 문의 ➔
         </a>
-        <a href="#services" class="whitespace-nowrap px-6 py-4 bg-white/5 border border-white/10 hover:border-brandMint/50 font-bold rounded-lg text-white transition duration-300">
+        <a href="#services" class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 hover:border-brandMint/50 font-bold rounded-lg text-white transition duration-300 text-center text-sm md:text-base">
           서비스 알아보기
         </a>
       </div>
@@ -139,16 +139,16 @@
   </section>
 
   <!-- ==================== ABOUT US (COMPANY INTRO) ==================== -->
-  <section id="about" class="py-24 border-y border-white/5 bg-brandDark relative">
+  <section id="about" class="py-20 border-y border-white/5 bg-brandDark relative">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Visual Accent Box -->
-        <div class="relative bg-gradient-to-br from-brandPurple to-brandDark p-8 rounded-2xl border border-white/5 shadow-2xl">
+        <div class="relative bg-gradient-to-br from-brandPurple to-brandDark p-6 md:p-8 rounded-2xl border border-white/5 shadow-2xl">
           <div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-brandMint"></div>
           <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-brandMint"></div>
-          <div class="space-y-6 py-6">
+          <div class="space-y-6 py-4 md:py-6">
             <h3 class="text-brandMint font-mono text-sm tracking-widest uppercase">Philosophy</h3>
-            <blockquote class="text-xl md:text-2xl font-light italic leading-relaxed text-gray-200">
+            <blockquote class="text-lg md:text-2xl font-light italic leading-relaxed text-gray-200">
               "언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 출발합니다."
             </blockquote>
             <p class="text-sm text-brandMint font-medium">— TONGHADA Translation & Consulting</p>
@@ -156,13 +156,13 @@
         </div>
 
         <!-- Detailed Description -->
-        <div class="space-y-8">
-          <div class="space-y-4">
+        <div class="space-y-6 md:space-y-8">
+          <div class="space-y-3">
             <span class="text-xs font-mono tracking-widest text-brandMint uppercase">회사 소개</span>
-            <h2 class="text-3xl md:text-4xl font-extrabold">통하다 통번역 컨설팅</h2>
+            <h2 class="text-2xl md:text-4xl font-extrabold">통하다 통번역 컨설팅</h2>
           </div>
           
-          <div class="text-textLight leading-relaxed space-y-6 text-base md:text-lg">
+          <div class="text-textLight leading-relaxed space-y-4 md:space-y-6 text-sm md:text-lg">
             <p>‘통하다'라는 회사명은 언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 지었습니다.</p>
             <p>한국어-네덜란드어-영어 통역과 번역을 2009년부터 전문적으로 수행해오고 있으며, 고객이 필요로 하는 가장 정밀하고 신뢰할 수 있는 비즈니스 가교를 구축합니다.</p>
           </div>
@@ -172,23 +172,23 @@
   </section>
 
   <!-- ==================== REPRESENTATIVE PROFILE (약력) ==================== -->
-  <section id="profile" class="py-24 bg-brandDark/50">
+  <section id="profile" class="py-20 bg-brandDark/50">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
         <span class="text-xs font-mono tracking-widest text-brandMint uppercase">대표 약력</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold">비즈니스 전문성의 기반</h2>
+        <h2 class="text-2xl md:text-4xl font-extrabold">비즈니스 전문성의 기반</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <!-- Education & Military -->
-        <div class="bg-brandPurple/30 border border-white/5 p-8 rounded-2xl space-y-6">
+        <div class="bg-brandPurple/30 border border-white/5 p-6 md:p-8 rounded-2xl space-y-6">
           <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
               <i class="fa-solid fa-graduation-cap text-xl"></i>
             </div>
-            <h3 class="text-xl font-bold">학력 및 군경력</h3>
+            <h3 class="text-lg md:text-xl font-bold">학력 및 군경력</h3>
           </div>
-          <ul class="space-y-4 text-textLight text-sm md:text-base">
+          <ul class="space-y-4 text-textLight text-xs md:text-base">
             <li class="space-y-1">
               <p class="text-white font-semibold">암스테르담 자유대학교 경영학 석사</p>
               <p class="text-xs">인적자원관리 (Human Resource Management) 전공 졸업</p>
@@ -205,14 +205,14 @@
         </div>
 
         <!-- Corporate Experience -->
-        <div class="bg-brandPurple/30 border border-white/5 p-8 rounded-2xl space-y-6">
+        <div class="bg-brandPurple/30 border border-white/5 p-6 md:p-8 rounded-2xl space-y-6">
           <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint">
+            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
               <i class="fa-solid fa-briefcase text-xl"></i>
             </div>
-            <h3 class="text-xl font-bold">비즈니스 실무 경력</h3>
+            <h3 class="text-lg md:text-xl font-bold">비즈니스 실무 경력</h3>
           </div>
-          <ul class="space-y-4 text-textLight text-sm md:text-base">
+          <ul class="space-y-4 text-textLight text-xs md:text-base">
             <li class="space-y-1">
               <p class="text-white font-semibold">글로벌 테크 리크루터 및 헤드헌터 7년 역임 (2018-2025)</p>
               <p class="text-xs">해양 에너지, 우주항공, 신재생 에너지, 반도체 제조 장비 전문 기술 이해도 보유</p>
@@ -232,14 +232,14 @@
   </section>
 
   <!-- ==================== SERVICES OVERVIEW (서비스 소개) ==================== -->
-  <section id="services" class="py-24 bg-brandDark relative">
+  <section id="services" class="py-20 bg-brandDark relative">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
         <span class="text-xs font-mono tracking-widest text-brandMint uppercase">서비스 영역</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold">종합 비즈니스 통번역 솔루션</h2>
+        <h2 class="text-2xl md:text-4xl font-extrabold">종합 비즈니스 통번역 솔루션</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         <!-- Service 1: Interpretation -->
         <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
           <div class="space-y-4">
@@ -304,55 +304,54 @@
   </section>
 
   <!-- ==================== PORTFOLIO & WORK EXPERIENCE (최근 이력) ==================== -->
-  <section id="portfolio" class="py-24 bg-brandDark/40 border-t border-white/5">
+  <section id="portfolio" class="py-20 bg-brandDark/40 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
         <span class="text-xs font-mono tracking-widest text-brandMint uppercase">최근 실적</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold">검증된 수행 이력 (최근 3년)</h2>
+        <h2 class="text-2xl md:text-4xl font-extrabold">검증된 수행 이력 (최근 3년)</h2>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Interpretation Portfolio -->
         <div class="space-y-6">
-          <!-- ⚠️ 불필요했던 "Interactive List" 텍스트 깔끔하게 삭제 완료 -->
-          <h3 class="text-xl font-bold border-b border-white/10 pb-3">
+          <h3 class="text-lg md:text-xl font-bold border-b border-white/10 pb-3">
             <span>통역 분야</span>
           </h3>
           <div class="space-y-4">
             <!-- Port Card 1 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">정부 및 VIP 의전</p>
-              <h4 class="text-base font-semibold text-white">대한민국 장관 네덜란드 공식 방문 VIP 통역</h4>
+              <h4 class="text-sm md:text-base font-semibold text-white">대한민국 장관 네덜란드 공식 방문 VIP 통역</h4>
             </div>
             <!-- Port Card 2 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">기관 및 비즈니스 미팅</p>
-              <h4 class="text-base font-semibold text-white">네덜란드 주요 박물관 인사 방문 비즈니스 통역</h4>
+              <h4 class="text-sm md:text-base font-semibold text-white">네덜란드 주요 박물관 인사 방문 비즈니스 통역</h4>
             </div>
             <!-- Port Card 3 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">공기업 사령탑 의전</p>
-              <h4 class="text-base font-semibold text-white">공기업 사장 네덜란드 내빈 초청 및 순방 VIP 통역</h4>
+              <h4 class="text-sm md:text-base font-semibold text-white">공기업 사장 네덜란드 내빈 초청 및 순방 VIP 통역</h4>
             </div>
             <!-- Port Card 4 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">법률 및 행정</p>
-              <h4 class="text-base font-semibold text-white">네덜란드 법원 행정소송 전문 통역</h4>
+              <h4 class="text-sm md:text-base font-semibold text-white">네덜란드 법원 행정소송 전문 통역</h4>
             </div>
             
-            <!-- 🛠️ 더보기 -> 펼치기/접기 애니메이션 컨테이너 -->
+            <!-- 펼치기/접기 애니메이션 컨테이너 -->
             <div id="interpretation-more" class="collapsible-content space-y-4">
               <div class="p-5 bg-white/5 rounded-xl border border-white/5">
                 <p class="text-brandMint text-xs font-semibold mb-1">농업 & 교육</p>
-                <h4 class="text-base font-semibold text-white">한국 농업인 단체 네덜란드 현지 시설 방문 통역 및 대학생 의료 분야 발표 통역</h4>
+                <h4 class="text-sm md:text-base font-semibold text-white">한국 농업인 단체 네덜란드 현지 시설 방문 통역 및 대학생 의료 분야 발표 통역</h4>
               </div>
               <div class="p-5 bg-white/5 rounded-xl border border-white/5">
                 <p class="text-brandMint text-xs font-semibold mb-1">미디어 & 다큐</p>
-                <h4 class="text-base font-semibold text-white">숲 관련 정책 인터넷 뉴스 인터뷰 통역 및 해외 입양아 가족 영상통화 통역</h4>
+                <h4 class="text-sm md:text-base font-semibold text-white">숲 관련 정책 인터넷 뉴스 인터뷰 통역 및 해외 입양아 가족 영상통화 통역</h4>
               </div>
             </div>
             
-            <!-- 🛠️ 직관적인 펼치기/접기 버튼 변경 (화살표 180도 회전 애니메이션 처리) -->
+            <!-- 세련된 펼치기/접기 버튼 -->
             <button onclick="toggleSection('interpretation-more', this)" class="btn-toggle inline-flex items-center space-x-2 text-sm font-semibold mt-2 focus:outline-none">
               <span class="btn-text">펼치기</span>
               <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -362,30 +361,29 @@
 
         <!-- Translation & Arrangement Portfolio -->
         <div class="space-y-6">
-          <!-- ⚠️ 불필요했던 "Interactive List" 텍스트 깔끔하게 삭제 완료 -->
-          <h3 class="text-xl font-bold border-b border-white/10 pb-3">
+          <h3 class="text-lg md:text-xl font-bold border-b border-white/10 pb-3">
             <span>번역 및 비즈니스 섭외 분야</span>
           </h3>
           <div class="space-y-4">
             <!-- Port Card 1 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">의료 기기 및 사용 설명서</p>
-              <h4 class="text-base font-semibold text-white">의료용품 네덜란드어 정밀 사용 설명서 제작 및 번역</h4>
+              <h4 class="text-sm md:text-base font-semibold text-white">의료용품 네덜란드어 정밀 사용 설명서 제작 및 번역</h4>
             </div>
             <!-- Port Card 2 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">비즈니스 조율</p>
-              <h4 class="text-base font-semibold text-white">항공분야 정부 부처 및 현지 유관 기업 접촉 & 섭외 지원</h4>
+              <h4 class="text-sm md:text-base font-semibold text-white">항공분야 정부 부처 및 현지 유관 기업 접촉 & 섭외 지원</h4>
             </div>
             <!-- Port Card 3 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">영상 자막 현지화</p>
-              <h4 class="text-base font-semibold text-white">지상파 가족 예능 프로그램 및 음식 다큐멘터리 자막 번역</h4>
+              <h4 class="text-sm md:text-base font-semibold text-white">지상파 가족 예능 프로그램 및 음식 다큐멘터리 자막 번역</h4>
             </div>
             <!-- Port Card 4 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">입양 아카이브 번역</p>
-              <h4 class="text-base font-semibold text-white">해외 입양인 편지 및 패밀리 아카이브 복원 번역</h4>
+              <h4 class="text-sm md:text-base font-semibold text-white">해외 입양인 편지 및 패밀리 아카이브 복원 번역</h4>
             </div>
           </div>
         </div>
@@ -394,24 +392,24 @@
   </section>
 
   <!-- ==================== CONTACT SECTION (연락처) ==================== -->
-  <section id="contact" class="py-24 bg-gradient-to-b from-brandDark to-brandPurple relative">
+  <section id="contact" class="py-20 bg-gradient-to-b from-brandDark to-brandPurple relative">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+      <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
         <span class="text-xs font-mono tracking-widest text-brandMint uppercase">글로벌 협업 파트너</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold">소중한 프로젝트를 들려주세요</h2>
+        <h2 class="text-2xl md:text-4xl font-extrabold">소중한 프로젝트를 들려주세요</h2>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
         <!-- Contact Information Cards -->
-        <div class="space-y-6 lg:col-span-1">
+        <div class="space-y-4 md:space-y-6 lg:col-span-1">
           <!-- Email Card -->
           <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
             <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
               <i class="fa-regular fa-envelope text-xl"></i>
             </div>
-            <div>
+            <div class="min-w-0">
               <p class="text-xs text-textLight">이메일 문의</p>
-              <a href="mailto:jinyoo.nl@outlook.com" class="text-base md:text-lg font-bold hover:text-brandMint transition">jinyoo.nl@outlook.com</a>
+              <a href="mailto:jinyoo.nl@outlook.com" class="text-sm md:text-lg font-bold hover:text-brandMint transition block truncate">jinyoo.nl@outlook.com</a>
             </div>
           </div>
 
@@ -422,7 +420,7 @@
             </div>
             <div>
               <p class="text-xs text-textLight">네덜란드 및 글로벌 연락처</p>
-              <a href="tel:+31621162435" class="text-base md:text-lg font-bold hover:text-brandMint transition">+31 (0)6 2116 2435</a>
+              <a href="tel:+31621162435" class="text-sm md:text-lg font-bold hover:text-brandMint transition">+31 (0)6 2116 2435</a>
             </div>
           </div>
 
@@ -433,13 +431,13 @@
             </div>
             <div>
               <p class="text-xs text-textLight">카카오톡 ID</p>
-              <p class="text-base md:text-lg font-bold">evenalso</p>
+              <p class="text-sm md:text-lg font-bold">evenalso</p>
             </div>
           </div>
         </div>
 
         <!-- Consultation Form with Web3Forms Live Email Integration -->
-        <div class="lg:col-span-2 bg-white/5 p-8 rounded-2xl border border-white/5 relative">
+        <div class="lg:col-span-2 bg-white/5 p-6 md:p-8 rounded-2xl border border-white/5 relative">
           
           <!-- 1. 메일 전송 입력 폼 -->
           <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6 transition-all duration-300">
@@ -448,7 +446,7 @@
             <!-- 스팸 방지용 허니팟 시스템 -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-            <h3 class="text-xl font-bold mb-6">빠른 의뢰 상담 접수</h3>
+            <h3 class="text-lg md:text-xl font-bold mb-6">빠른 의뢰 상담 접수</h3>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -475,7 +473,7 @@
             </div>
             
             <!-- 전송 버튼 및 로딩 제어 -->
-            <button type="submit" id="submit-btn" class="w-full py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300 flex items-center justify-center space-x-2">
+            <button type="submit" id="submit-btn" class="w-full py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300 flex items-center justify-center space-x-2 text-sm md:text-base">
               <span id="btn-text">의뢰 접수하기 ➔</span>
               <svg id="loading-spinner" class="hidden animate-spin h-5 w-5 text-brandDark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -485,11 +483,11 @@
           </form>
 
           <!-- 2. 전송 성공 시 동적으로 노출되는 고품격 안내 카드 -->
-          <div id="success-card" class="hidden flex-col items-center justify-center text-center py-16 px-4 space-y-6">
+          <div id="success-card" class="hidden flex-col items-center justify-center text-center py-12 px-4 space-y-6 animate-fade-in">
             <div class="w-20 h-20 bg-brandMint/10 rounded-full flex items-center justify-center text-brandMint animate-bounce">
               <i class="fa-solid fa-circle-check text-5xl"></i>
             </div>
-            <h3 class="text-2xl font-extrabold text-white">의뢰가 안전하게 전달되었습니다!</h3>
+            <h3 class="text-xl md:text-2xl font-extrabold text-white">의뢰가 안전하게 전달되었습니다!</h3>
             <p class="text-textLight max-w-md leading-relaxed text-sm md:text-base">
               대표 통번역사가 직접 검토한 후, 기재해주신 이메일 혹은 연락처로 **24시간 이내에** 신속하게 견적 분석 및 일정을 안내해 드리겠습니다.
             </p>
@@ -510,7 +508,6 @@
         <p class="font-bold text-white">TONGHADA Translation & Consulting</p>
         <p>Copyright &copy; 2026 TONGHADA. All rights reserved.</p>
       </div>
-      <!-- 브랜드 맞춤 톤앤매너 링크드인 전용 버튼 연동 -->
       <div class="flex space-x-6 items-center">
         <a href="https://www.linkedin.com/in/jinyoo" target="_blank" class="hover:text-brandMint text-2xl transition" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
         <a href="mailto:jinyoo.nl@outlook.com" class="hover:text-brandMint text-2xl transition" title="Email"><i class="fa-regular fa-envelope"></i></a>
@@ -520,26 +517,24 @@
 
   <!-- ==================== JAVASCRIPT ==================== -->
   <script>
-    // 1. 🛠️ 펼치기/접기 다이내믹 인터랙션 로직
+    // 1. 펼치기/접기 인터랙션 로직 (화살표 회전 처리 통합)
     function toggleSection(elementId, btn) {
-  const element = document.getElementById(elementId);
-  const btnText = btn.querySelector('.btn-text');
-  const arrowIcon = btn.querySelector('i');
-  
-  if (element.classList.contains('expanded')) {
-    element.classList.remove('expanded');
-    // KR: 펼치기 / EN: Show More / NL: Meer Weergeven
-    btnText.innerText = "펼치기"; 
-    arrowIcon.style.transform = "rotate(0deg)";
-  } else {
-    element.classList.add('expanded');
-    // KR: 접기 / EN: Collapse / NL: Inklappen
-    btnText.innerText = "접기"; 
-    arrowIcon.style.transform = "rotate(180deg)";
-  }
-}
+      const element = document.getElementById(elementId);
+      const btnText = btn.querySelector('.btn-text');
+      const arrowIcon = btn.querySelector('i');
+      
+      if (element.classList.contains('expanded')) {
+        element.classList.remove('expanded');
+        btnText.innerText = "펼치기";
+        arrowIcon.style.transform = "rotate(0deg)";
+      } else {
+        element.classList.add('expanded');
+        btnText.innerText = "접기";
+        arrowIcon.style.transform = "rotate(180deg)";
+      }
+    }
 
-    // 2. 📧 Web3Forms 비동기 이메일 발송 처리 함수
+    // 2. Web3Forms 비동기 이메일 발송 처리 함수
     async function handleFormSubmit(event) {
       event.preventDefault();
       
@@ -548,7 +543,6 @@
       const spinner = document.getElementById('loading-spinner');
       const submitBtn = document.getElementById('submit-btn');
       
-      // UI 전송 중 로딩 모드로 전환
       btnText.innerText = "의뢰 전송하는 중...";
       spinner.classList.remove('hidden');
       submitBtn.disabled = true;
@@ -565,23 +559,19 @@
         const result = await response.json();
 
         if (result.success) {
-          // 전송 완료 시, 입력 폼 숨기고 성공 카드 표시
           form.classList.add('hidden');
           document.getElementById('success-card').classList.remove('hidden');
           document.getElementById('success-card').classList.add('flex');
         } else {
-          // API 에러 시 대응
-          alert("이메일 전송 도중 시스템 장애가 발생했습니다. 직접 jinyoo.nl@outlook.com 으로 전송을 요청드립니다.");
+          alert("이메일 전송 도중 오류가 발생했습니다. jinyoo.nl@outlook.com으로 연락 요청드립니다.");
           resetSubmitButton();
         }
       } catch (error) {
-        // 네트워크 장애 시 대응
         alert("인터넷 연결 상태를 확인해 주세요.");
         resetSubmitButton();
       }
     }
 
-    // 전송 단추 원상복구 제어
     function resetSubmitButton() {
       const btnText = document.getElementById('btn-text');
       const spinner = document.getElementById('loading-spinner');
@@ -593,7 +583,6 @@
       submitBtn.classList.remove('opacity-70');
     }
 
-    // 폼 초기화 후 다시 보여주기
     function resetContactForm() {
       const form = document.getElementById('contact-form');
       const successCard = document.getElementById('success-card');
