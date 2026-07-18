@@ -46,6 +46,30 @@
       max-height: 500px; /* 여유로운 최대 높이 */
       opacity: 1;
     }
+
+    /* 기존 스타일 수정 및 추가 */
+.btn-toggle {
+  color: #00F2C4 !important; /* 항상 민트색 고정 */
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-toggle:hover {
+  opacity: 0.7; /* 색상을 바꾸는 대신 살짝 투명하게 하여 '눌림' 피드백 제공 */
+}
+
+/* 포커스(클릭 후) 시 하얗게 변하는 브라우저 기본 효과 방지 */
+.btn-toggle:focus {
+  outline: none;
+  color: #00F2C4 !important;
+}
+
+/* 화살표 회전 애니메이션 */
+.btn-toggle i {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
   </style>
 </head>
 <body class="bg-brandDark text-white font-sans antialiased selection:bg-brandMint selection:text-brandDark">
@@ -320,9 +344,9 @@
             </div>
             
             <!-- 🛠️ 직관적인 펼치기/접기 버튼 변경 (화살표 180도 회전 애니메이션 처리) -->
-            <button onclick="toggleSection('interpretation-more', this)" class="inline-flex items-center space-x-2 text-brandMint text-sm font-semibold mt-2 hover:text-white transition duration-300 focus:outline-none">
+            <button onclick="toggleSection('interpretation-more', this)" class="btn-toggle inline-flex items-center space-x-2 text-sm font-semibold mt-2 focus:outline-none">
               <span class="btn-text">펼치기</span>
-              <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300"></i>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
             </button>
           </div>
         </div>
@@ -479,7 +503,7 @@
       </div>
       <!-- 브랜드 맞춤 톤앤매너 링크드인 전용 버튼 연동 -->
       <div class="flex space-x-6 items-center">
-        <a href="https://linkedin.com" target="_blank" class="hover:text-brandMint text-2xl transition" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/jinyoo" target="_blank" class="hover:text-brandMint text-2xl transition" title="LinkedIn Profile"><i class="fa-brands fa-linkedin"></i></a>
         <a href="mailto:jinyoo.nl@outlook.com" class="hover:text-brandMint text-2xl transition" title="Email"><i class="fa-regular fa-envelope"></i></a>
       </div>
     </div>
@@ -489,22 +513,22 @@
   <script>
     // 1. 🛠️ 펼치기/접기 다이내믹 인터랙션 로직
     function toggleSection(elementId, btn) {
-      const element = document.getElementById(elementId);
-      const btnText = btn.querySelector('.btn-text');
-      const arrowIcon = btn.querySelector('i');
-      
-      if (element.classList.contains('expanded')) {
-        // 접기 동작
-        element.classList.remove('expanded');
-        btnText.innerText = "펼치기";
-        arrowIcon.style.transform = "rotate(0deg)";
-      } else {
-        // 펼치기 동작
-        element.classList.add('expanded');
-        btnText.innerText = "접기";
-        arrowIcon.style.transform = "rotate(180deg)";
-      }
-    }
+  const element = document.getElementById(elementId);
+  const btnText = btn.querySelector('.btn-text');
+  const arrowIcon = btn.querySelector('i');
+  
+  if (element.classList.contains('expanded')) {
+    element.classList.remove('expanded');
+    // KR: 펼치기 / EN: Show More / NL: Meer Weergeven
+    btnText.innerText = "펼치기"; 
+    arrowIcon.style.transform = "rotate(0deg)";
+  } else {
+    element.classList.add('expanded');
+    // KR: 접기 / EN: Collapse / NL: Inklappen
+    btnText.innerText = "접기"; 
+    arrowIcon.style.transform = "rotate(180deg)";
+  }
+}
 
     // 2. 📧 Web3Forms 비동기 이메일 발송 처리 함수
     async function handleFormSubmit(event) {
