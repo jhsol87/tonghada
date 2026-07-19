@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions & Privacy Policy - TONGHADA</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandDark: '#0A0E1A',
+            brandPurple: '#1A1235',
+            brandMint: '#00F2C4',
+            textLight: '#9CA3AF'
+          },
+          fontFamily: {
+            sans: ['Poppins', 'Noto Sans KR', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { word-break: keep-all; }
+    .logo-glow {
+      filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.9)) 
+              drop-shadow(0px 0px 1px rgba(255, 255, 255, 1));
+    }
+  </style>
+</head>
+<body class="bg-brandDark text-white font-sans antialiased selection:bg-brandMint selection:text-brandDark">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-brandDark/85 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="logo.png" alt="TONGHADA" class="h-10 md:h-12 w-auto object-contain logo-glow">
+        <span class="text-xs text-textLight border-l border-white/10 pl-3 hidden sm:inline">Legal Terms</span>
+      </a>
+      <a href="index.html" class="px-4 py-2 bg-white/5 border border-white/10 hover:border-brandMint/30 rounded-lg text-xs font-semibold hover:text-brandMint transition">
+        <i class="fa-solid fa-arrow-left mr-2"></i>Back to Home
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== TERMS & PRIVACY CONTAINER ==================== -->
+  <main class="pt-32 pb-24 max-w-4xl mx-auto px-6">
+    <div class="space-y-4 mb-10 text-center sm:text-left">
+      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight">Terms & Privacy Policy</h1>
+      <p class="text-textLight text-sm md:text-base">Please choose your language to read our terms of services and privacy policy.</p>
+    </div>
+
+    <!-- Language Selector Tabs -->
+    <div class="flex border-b border-white/10 mb-8 overflow-x-auto">
+      <button onclick="switchLang('en')" id="btn-en" class="px-6 py-3 font-bold border-b-2 border-brandMint text-brandMint transition text-sm shrink-0">English</button>
+      <button onclick="switchLang('nl')" id="btn-nl" class="px-6 py-3 font-bold border-b-2 border-transparent text-textLight hover:text-white transition text-sm shrink-0">Nederlands (Dutch)</button>
+    </div>
+
+    <!-- ==================== ENGLISH TERMS ==================== -->
+    <div id="content-en" class="space-y-12">
+      <!-- Terms & Conditions Section -->
+      <section class="bg-brandPurple/20 border border-white/5 p-6 md:p-8 rounded-2xl space-y-6">
+        <h2 class="text-2xl font-bold text-brandMint border-b border-white/10 pb-3 flex items-center">
+          <i class="fa-solid fa-file-contract mr-3"></i>1. Terms and Conditions (T&C)
+        </h2>
+        <div class="space-y-4 text-sm md:text-base text-textLight leading-relaxed">
+          <p class="font-semibold text-white">Last updated: July 2026</p>
+          <p>Welcome to TONGHADA Translation & Consulting. These Terms and Conditions govern your use of our translation, interpretation, and consulting services.</p>
+          
+          <h3 class="text-white font-bold mt-4">1.1 Identity of the Entrepreneur</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Business Name: TONGHADA Translation & Consulting</li>
+            <li>Sole Proprietor: Jin Yoo</li>
+            <li>Chamber of Commerce (KvK) Number: <span class="text-brandMint">[Your KvK Number Here]</span></li>
+            <li>E-mail: jinyoo.nl@outlook.com</li>
+          </ul>
+
+          <h3 class="text-white font-bold mt-4">1.2 Scope of Services</h3>
+          <p>We provide professional translation and consecutive/escort interpretation services between Korean, Dutch, and English. Specific terms, deadlines, and pricing for each project are agreed upon in writing (via email) before work begins.</p>
+
+          <h3 class="text-white font-bold mt-4">1.3 Client Obligations & Material</h3>
+          <p>Clients are responsible for providing clear, accurate, and complete source texts and necessary context/reference materials in a timely manner. We are not liable for errors resulting from ambiguous or incorrect source material.</p>
+
+          <h3 class="text-white font-bold mt-4">1.4 Limitation of Liability</h3>
+          <p>While we perform all services with utmost professional care, our total cumulative liability for any errors, omissions, or delay in delivery shall be strictly limited to the amount of the invoice paid by the client for the specific project.</p>
+
+          <h3 class="text-white font-bold mt-4">1.5 Intellectual Property & Confidentiality</h3>
+          <p>All source texts and client materials are treated with strict confidentiality. Intellectual property of the translated text transfers to the client upon full payment of the invoice, unless otherwise agreed.</p>
+
+          <h3 class="text-white font-bold mt-4">1.6 Governing Law</h3>
+          <p>These terms and all contractual agreements with TONGHADA are governed exclusively by the laws of the Netherlands. Any disputes shall be submitted to the competent court in Amsterdam, Netherlands.</p>
+        </div>
+      </section>
+
+      <!-- Privacy Policy Section -->
+      <section class="bg-brandPurple/20 border border-white/5 p-6 md:p-8 rounded-2xl space-y-6">
+        <h2 class="text-2xl font-bold text-brandMint border-b border-white/10 pb-3 flex items-center">
+          <i class="fa-solid fa-shield-halved mr-3"></i>2. Privacy Policy (GDPR Compliance)
+        </h2>
+        <div class="space-y-4 text-sm md:text-base text-textLight leading-relaxed">
+          <p>We take your privacy seriously and process personal data in compliance with the General Data Protection Regulation (GDPR) of the European Union.</p>
+
+          <h3 class="text-white font-bold mt-4">2.1 Data We Collect</h3>
+          <p>When you submit a request through our consultation form, we collect:</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Your Name / Company Name</li>
+            <li>Your Contact Information (E-mail address and/or Phone number)</li>
+            <li>The message and project files/descriptions you provide</li>
+          </ul>
+
+          <h3 class="text-white font-bold mt-4">2.2 Purpose of Processing</h3>
+          <p>We process this data solely to prepare a quotation, communicate with you regarding your service request, and execute the service agreement.</p>
+
+          <h3 class="text-white font-bold mt-4">2.3 Data Storage & Sharing</h3>
+          <p>Your data is stored securely. We do not sell, rent, or share your personal data with third parties for marketing purposes. Data is only shared with third-party service providers (like email systems, Web3Forms, or subcontractors) strictly necessary to run our business or deliver our service.</p>
+
+          <h3 class="text-white font-bold mt-4">2.4 Your Rights</h3>
+          <p>Under the GDPR, you have the right to access, rectify, or request erasure of your personal data at any time. Please contact us at <a href="mailto:jinyoo.nl@outlook.com" class="text-brandMint hover:underline">jinyoo.nl@outlook.com</a> to exercise these rights.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- ==================== DUTCH TERMS ==================== -->
+    <div id="content-nl" class="space-y-12 hidden">
+      <!-- Algemene Voorwaarden Section -->
+      <section class="bg-brandPurple/20 border border-white/5 p-6 md:p-8 rounded-2xl space-y-6">
+        <h2 class="text-2xl font-bold text-brandMint border-b border-white/10 pb-3 flex items-center">
+          <i class="fa-solid fa-file-contract mr-3"></i>1. Algemene Voorwaarden
+        </h2>
+        <div class="space-y-4 text-sm md:text-base text-textLight leading-relaxed">
+          <p class="font-semibold text-white">Laatst bijgewerkt: juli 2026</p>
+          <p>Welkom bij TONGHADA Translation & Consulting. Deze Algemene Voorwaarden zijn van toepassing op al onze tolk-, vertaal- en adviesdiensten.</p>
+          
+          <h3 class="text-white font-bold mt-4">1.1 Identiteit van de Ondernemer</h3>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Bedrijfsnaam: TONGHADA Translation & Consulting</li>
+            <li>Eigenaar: Jin Yoo</li>
+            <li>KvK-nummer (Kamer van Koophandel): <span class="text-brandMint">[Your KvK Number Here]</span></li>
+            <li>E-mail: jinyoo.nl@outlook.com</li>
+          </ul>
+
+          <h3 class="text-white font-bold mt-4">1.2 Diensten en Offertes</h3>
+          <p>Wij leveren professionele vertaal- en tolkdiensten tussen het Koreaans, Nederlands en Engels. Specifieke tarieven, deadlines en details van elk project worden vooraf schriftelijk (per e-mail) overeengekomen.</p>
+
+          <h3 class="text-white font-bold mt-4">1.3 Verplichtingen van de Opdrachtgever</h3>
+          <p>De opdrachtgever is verantwoordelijk voor de tijdige aanlevering van duidelijke, juiste en volledige bronteksten en contextmateriaal. Wij zijn niet aansprakelijk voor fouten in de vertaling als gevolg van onduidelijke bronmaterialen.</p>
+
+          <h3 class="text-white font-bold mt-4">1.4 Beperking van Aansprakelijkheid</h3>
+          <p>Hoewel wij onze diensten met de grootst mogelijke zorgvuldigheid uitvoeren, is onze totale aansprakelijkheid voor eventuele fouten of vertragingen strikt beperkt tot het factuurbedrag dat door de opdrachtgever is betaald voor het specifieke project.</p>
+
+          <h3 class="text-white font-bold mt-4">1.5 Vertrouwelijkheid en Intellectueel Eigendom</h3>
+          <p>Alle bronteksten en klantinformatie worden strikt vertrouwelijk behandeld. Het intellectueel eigendom van de vertaalde tekst gaat over op de klant na volledige betaling van de factuur, tenzij anders overeengekomen.</p>
+
+          <h3 class="text-white font-bold mt-4">1.6 Toepasselijk Recht</h3>
+          <p>Op alle overeenkomsten tussen TONGHADA en de opdrachtgever is uitsluitend Nederlands recht van toepassing. Geschillen zullen worden voorgelegd aan de bevoegde rechter te Amsterdam.</p>
+        </div>
+      </section>
+
+      <!-- Privacybeleid Section -->
+      <section class="bg-brandPurple/20 border border-white/5 p-6 md:p-8 rounded-2xl space-y-6">
+        <h2 class="text-2xl font-bold text-brandMint border-b border-white/10 pb-3 flex items-center">
+          <i class="fa-solid fa-shield-halved mr-3"></i>2. Privacybeleid (AVG-naleving)
+        </h2>
+        <div class="space-y-4 text-sm md:text-base text-textLight leading-relaxed">
+          <p>Wij nemen uw privacy serieus en verwerken uw persoonsgegevens in overeenstemming met de Algemene Verordening Gegevensbescherming (AVG) van de Europese Unie.</p>
+
+          <h3 class="text-white font-bold mt-4">2.1 Gegevens Die Wij Verwerken</h3>
+          <p>Wanneer u contact met ons opneemt via het offerteformulier, verzamelen wij:</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Uw Naam / Bedrijfsnaam</li>
+            <li>Uw Contactgegevens (E-mailadres en/of Telefoonnummer)</li>
+            <li>De inhoud van uw bericht en eventuele projectbestanden</li>
+          </ul>
+
+          <h3 class="text-white font-bold mt-4">2.2 Doel van de Verwerking</h3>
+          <p>Wij verwerken deze gegevens uitsluitend om een offerte op te stellen, contact met u op te nemen over uw aanvraag, en de overeengekomen tolk- of vertaalopdracht uit te voeren.</p>
+
+          <h3 class="text-white font-bold mt-4">2.3 Gegevensopslag en Delen</h3>
+          <p>Uw gegevens worden veilig opgeslagen. Wij verkopen of delen uw persoonsgegevens niet met derden voor marketingdoeleinden. Gegevens worden alleen gedeeld met derde partijen (zoals e-mailproviders, Web3Forms, of hulppersonen) voor zover dat noodzakelijk is voor de bedrijfsvoering of de uitvoering van de opdracht.</p>
+
+          <h3 class="text-white font-bold mt-4">2.4 Uw Rechten</h3>
+          <p>Onder de AVG heeft u het recht om uw persoonsgegevens in te zien, te corrigeren of te laten wissen. Neem contact met ons op via <a href="mailto:jinyoo.nl@outlook.com" class="text-brandMint hover:underline">jinyoo.nl@outlook.com</a> om gebruik te maken van deze rechten.</p>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 bg-brandDark border-t border-white/5 text-xs text-textLight">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <p class="font-bold text-white mb-2">TONGHADA Translation & Consulting</p>
+      <p>Copyright &copy; 2026 TONGHADA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    function switchLang(lang) {
+      const btnEn = document.getElementById('btn-en');
+      const btnNl = document.getElementById('btn-nl');
+      const contentEn = document.getElementById('content-en');
+      const contentNl = document.getElementById('content-nl');
+
+      if (lang === 'en') {
+        btnEn.className = "px-6 py-3 font-bold border-b-2 border-brandMint text-brandMint transition text-sm shrink-0";
+        btnNl.className = "px-6 py-3 font-bold border-b-2 border-transparent text-textLight hover:text-white transition text-sm shrink-0";
+        contentEn.classList.remove('hidden');
+        contentNl.classList.add('hidden');
+      } else if (lang === 'nl') {
+        btnEn.className = "px-6 py-3 font-bold border-b-2 border-transparent text-textLight hover:text-white transition text-sm shrink-0";
+        btnNl.className = "px-6 py-3 font-bold border-b-2 border-brandMint text-brandMint transition text-sm shrink-0";
+        contentEn.classList.add('hidden');
+        contentNl.classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
