@@ -138,36 +138,77 @@
     </div>
   </section>
 
-  <!-- ==================== ABOUT US (COMPANY INTRO) ==================== -->
-  <section id="about" class="py-20 border-y border-white/5 bg-brandDark relative">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Visual Accent Box -->
-        <div class="relative bg-gradient-to-br from-brandPurple to-brandDark p-6 md:p-8 rounded-2xl border border-white/5 shadow-2xl">
-          <div class="absolute -top-4 -left-4 w-12 h-12 border-t-2 border-l-2 border-brandMint"></div>
-          <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-2 border-r-2 border-brandMint"></div>
-          <div class="space-y-6 py-4 md:py-6">
-            <h3 class="text-brandMint font-mono text-sm tracking-widest uppercase">Philosophy</h3>
-            <blockquote class="text-lg md:text-2xl font-light italic leading-relaxed text-gray-200">
+    <!-- ==================== ABOUT US (COMPANY INTRO) ==================== -->
+  <section id="about" class="py-20 md:py-28 border-y border-white/5 bg-brandDark relative overflow-hidden">
+    <!-- 배경 은은한 빛 효과 -->
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,242,196,0.03),transparent_70%)] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <!-- 1. 섹션 헤더 (중앙 정렬로 정돈된 인상 제공) -->
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="inline-block px-3 py-1 rounded-full bg-brandMint/10 text-brandMint text-xs font-mono tracking-widest uppercase border border-brandMint/20">
+          About Us
+        </span>
+        <h2 class="text-2xl md:text-4xl font-extrabold tracking-tight">
+          통하다 통번역 컨설팅
+        </h2>
+        <div class="w-12 h-1 bg-brandMint mx-auto rounded-full mt-4"></div>
+      </div>
+
+      <!-- 2. 좌우 대칭 균형 카드 레이아웃 -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+        
+        <!-- 왼쪽: 브랜드 철학 카드 (Philosophy Card) - 5컬럼 할당 -->
+        <div class="lg:col-span-5 relative bg-gradient-to-br from-brandPurple/60 via-brandDark to-brandPurple/30 p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl flex flex-col justify-between group hover:border-brandMint/30 transition duration-300">
+          <div class="absolute top-0 right-0 p-8 text-brandMint/10 group-hover:text-brandMint/20 transition duration-300">
+            <i class="fa-solid fa-quote-right text-6xl"></i>
+          </div>
+          
+          <div class="space-y-6 relative z-10 my-auto">
+            <span class="text-brandMint font-mono text-xs tracking-widest uppercase font-semibold">Philosophy</span>
+            <blockquote class="text-lg md:text-2xl font-light italic leading-relaxed text-gray-100">
               "언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 출발합니다."
             </blockquote>
-            <p class="text-sm text-brandMint font-medium">— TONGHADA Translation & Consulting</p>
+          </div>
+
+          <div class="pt-6 border-t border-white/10 mt-6 relative z-10 flex items-center justify-between">
+            <span class="text-xs text-brandMint font-semibold">TONGHADA Philosophy</span>
+            <div class="w-2 h-2 rounded-full bg-brandMint animate-pulse"></div>
           </div>
         </div>
 
-        <!-- Detailed Description -->
-        <div class="space-y-6 md:space-y-8">
-          <div class="space-y-3">
-            <span class="text-xs font-mono tracking-widest text-brandMint uppercase">회사 소개</span>
-            <h2 class="text-2xl md:text-4xl font-extrabold">통하다 통번역 컨설팅</h2>
+        <!-- 오른쪽: 회사 상세 소개 (Company Story) - 7컬럼 할당 및 서술형 배치 -->
+        <div class="lg:col-span-7 bg-white/5 border border-white/5 p-8 md:p-10 rounded-3xl flex flex-col justify-center space-y-6">
+          <h3 class="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
+            <span class="w-2 h-6 bg-brandMint rounded-full inline-block"></span>
+            진정성 있는 비즈니스 가교
+          </h3>
+
+          <div class="text-textLight leading-relaxed space-y-5 text-sm md:text-lg">
+            <p>
+              ‘통하다'라는 회사명은 언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 지었습니다.
+            </p>
+            <p>
+              한국어-네덜란드어-영어 통역과 번역을 2009년부터 전문적으로 수행해오고 있으며, 단순 문장 전달을 넘어 고객이 필요로 하는 가장 정밀하고 신뢰할 수 있는 비즈니스 가교를 구축합니다.
+            </p>
           </div>
-          
-          <div class="text-textLight leading-relaxed space-y-4 md:space-y-6 text-sm md:text-lg">
-            <p>‘통하다'라는 회사명은 언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 지었습니다.</p>
-            <p>한국어-네덜란드어-영어 통역과 번역을 2009년부터 전문적으로 수행해오고 있으며, 고객이 필요로 하는 가장 정밀하고 신뢰할 수 있는 비즈니스 가교를 구축합니다.</p>
+
+          <!-- 요약 포인트 뱃지 -->
+          <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5 text-xs md:text-sm font-semibold text-gray-300">
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-check text-brandMint"></i>
+              <span>2009년부터 검증된 전문성</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <i class="fa-solid fa-check text-brandMint"></i>
+              <span>한-영-네덜란드어 삼각 통번역</span>
+            </div>
           </div>
         </div>
+
       </div>
+
     </div>
   </section>
 
