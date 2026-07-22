@@ -83,6 +83,10 @@
       display: inline-block;
       transition: transform 0.3s ease;
     }
+    @media (min-width: 768px) {
+      body { word-break: normal !important; }
+      h1, h2, h3, p, blockquote { text-wrap: balance; }
+    }
   </style>
 </head>
 <body class="bg-brandDark text-white font-sans antialiased selection:bg-brandMint selection:text-brandDark">
