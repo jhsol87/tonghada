@@ -441,7 +441,7 @@
     </div>
   </section>
 
-  <!-- ==================== CONTACT SECTION ==================== -->
+    <!-- ==================== CONTACT SECTION ==================== -->
   <section id="contact" class="py-20 bg-gradient-to-b from-brandDark to-brandPurple relative">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
@@ -449,64 +449,66 @@
         <h2 class="text-2xl md:text-4xl font-extrabold">Deel Uw Project Met Ons</h2>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-        <!-- Contact Info (KvK-nummer Card added directly underneath KakaoTalk ID) -->
-        <div class="space-y-4 md:space-y-6 lg:col-span-1">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+        <!-- Contact Info Cards -->
+        <div class="space-y-4 md:space-y-5 lg:col-span-1">
+          
           <!-- Email Card -->
-          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
-            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
-              <i class="fa-regular fa-envelope text-xl"></i>
+          <div class="p-5 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4 hover:border-brandMint/20 transition">
+            <div class="w-11 h-11 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-regular fa-envelope text-lg"></i>
             </div>
             <div class="min-w-0">
-              <p class="text-xs text-textLight">E-mail</p>
-              <a href="mailto:jinyoo.nl@outlook.com" class="text-sm md:text-lg font-bold hover:text-brandMint transition block truncate">jinyoo.nl@outlook.com</a>
+              <p class="text-xs text-textLight mb-0.5">E-mail</p>
+              <a href="mailto:jinyoo.nl@outlook.com" class="text-sm md:text-base font-bold hover:text-brandMint transition block truncate">jinyoo.nl@outlook.com</a>
             </div>
           </div>
 
           <!-- Phone Card -->
-          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
-            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
-              <i class="fa-solid fa-mobile-screen-button text-xl"></i>
+          <div class="p-5 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4 hover:border-brandMint/20 transition">
+            <div class="w-11 h-11 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-solid fa-mobile-screen-button text-lg"></i>
             </div>
             <div>
-              <p class="text-xs text-textLight">Mobiel</p>
-              <a href="tel:+31621162435" class="text-sm md:text-lg font-bold hover:text-brandMint transition">+31 (0)6 2116 2435</a>
+              <p class="text-xs text-textLight mb-0.5">Mobiel</p>
+              <a href="tel:+31621162435" class="text-sm md:text-base font-bold hover:text-brandMint transition">+31 (0)6 2116 2435</a>
             </div>
           </div>
 
           <!-- KakaoTalk Card -->
-          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4">
-            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
-              <i class="fa-solid fa-comment text-xl"></i>
+          <div class="p-5 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4 hover:border-brandMint/20 transition">
+            <div class="w-11 h-11 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
+              <i class="fa-solid fa-comment text-lg"></i>
             </div>
             <div>
-              <p class="text-xs text-textLight">KakaoTalk ID</p>
-              <p class="text-sm md:text-lg font-bold">evenalso</p>
+              <p class="text-xs text-textLight mb-0.5">KakaoTalk ID</p>
+              <p class="text-sm md:text-base font-bold">evenalso</p>
             </div>
           </div>
 
-          <!-- ⭐️ KvK-nummer Card (Geplaatst direct onder de KakaoTalk Card voor officiële compliance) -->
-          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4 border-brandMint/10 animate-fade-in">
-            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
-              <i class="fa-solid fa-building-shield text-xl"></i>
+          <!-- KvK & BTW Double Grid Card -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition">
+              <div class="flex items-center space-x-2.5 mb-1.5">
+                <div class="w-7 h-7 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
+                  <i class="fa-solid fa-building-shield text-xs"></i>
+                </div>
+                <p class="text-[11px] text-textLight font-medium">KvK-nummer (Kamer van Koophandel)</p>
+              </div>
+              <p class="text-xs md:text-sm font-bold tracking-wider text-white pl-0.5">99926105</p>
             </div>
-            <div>
-              <p class="text-xs text-textLight">KvK-nummer (Kamer van Koophandel)</p>
-              <p class="text-sm md:text-lg font-bold">99926105</p>
-            </div>
-          </div>
-        </div>
 
-        <!-- ⭐️ 네덜란드 부가세 등록번호 -->
-          <div class="p-6 bg-white/5 rounded-2xl border border-white/5 flex items-start space-x-4 border-brandMint/10">
-            <div class="w-12 h-12 bg-brandMint/10 rounded-xl flex items-center justify-center text-brandMint shrink-0">
-              <i class="fa-solid fa-building-shield text-xl"></i>
-            </div>
-            <div>
-              <p class="text-xs text-textLight">Btw-identificatienummer (btw-id)</p>
-              <p class="text-sm md:text-lg font-bold">NL005419387B03</p>
+            <div class="p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition">
+              <div class="flex items-center space-x-2.5 mb-1.5">
+                <div class="w-7 h-7 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
+                  <i class="fa-solid fa-receipt text-xs"></i>
+                </div>
+                <p class="text-[11px] text-textLight font-medium">Btw-identificatienummer (BTW-id)</p>
+              </div>
+              <p class="text-[11px] md:text-xs font-bold tracking-tight text-brandMint pl-0.5 truncate" title="NL005419387B03">NL005419387B03</p>
             </div>
           </div>
+
         </div>
 
         <!-- Consultation Form with Web3Forms Live Email Integration -->
