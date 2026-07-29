@@ -4,16 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TONGHADA - Koreaans-Nederlands Tolk- en Vertaalbureau</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Professionele Koreaans-Nederlands-Engelse tolk-, vertaal- en adviesdiensten onder leiding van een ervaren corporate recruiter met meer dan 7 jaar ervaring.">
+  <meta name="keywords" content="Tolk Koreaans Nederlands, Vertaler Koreaans, Vertaalbureau Koreaans, TONGHADA">
+  <meta name="author" content="TONGHADA Translation & Consulting">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts & FontAwesome Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- 통하다 파비콘 및 카카오톡/링크드인 공유용 썸네일 설정 -->
+  
+  <!-- Favicon & Open Graph -->
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
-
-  <!-- 카톡 / 링크드인 / SNS URL 공유 시 뜨는 썸네일 이미지 -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tonghada.nl/nl.html">
+  <meta property="og:title" content="TONGHADA - Koreaans-Nederlands Tolk- en Vertaalbureau">
+  <meta property="og:description" content="Verbindt Zuid-Korea en Nederland. Professionele Koreaans-Nederlands Tolk- en Vertaalopdrachten.">
   <meta property="og:image" content="https://tonghada.nl/favicon.png">
 
   <script>
@@ -38,7 +47,6 @@
   <style>
     html { scroll-behavior: smooth; }
     
-    /* Word-break strategy for clean mobile typography alignment */
     body {
       word-break: keep-all;
     }
@@ -48,13 +56,11 @@
       transition: all 0.3s ease;
     }
     
-    /* Precision Glow Filter for Transparent PNG Logo */
     .logo-glow {
       filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.9)) 
               drop-shadow(0px 0px 1px rgba(255, 255, 255, 1));
     }
     
-    /* Collapsible Content Animation */
     .collapsible-content {
       max-height: 0;
       overflow: hidden;
@@ -66,7 +72,6 @@
       opacity: 1;
     }
 
-    /* Mint Toggle Buttons styling */
     .btn-toggle {
       color: #00F2C4 !important;
       transition: opacity 0.2s ease;
@@ -83,9 +88,9 @@
       display: inline-block;
       transition: transform 0.3s ease;
     }
+    
     @media (min-width: 768px) {
-      body { word-break: normal !important; }
-      h1, h2, h3, p, blockquote { text-wrap: balance; }
+      h1, h2 { text-wrap: balance; }
     }
   </style>
 </head>
@@ -109,7 +114,6 @@
           <a href="#contact" class="hover:text-brandMint transition">Contact</a>
         </nav>
 
-        <!-- Static Multi-language Navigation Buttons -->
         <div class="flex items-center bg-white/5 p-1 rounded-full border border-white/10 text-xs shrink-0">
           <a href="index.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition duration-200">KR</a>
           <a href="en.html" class="px-3.5 py-1.5 rounded-full font-bold text-textLight hover:text-brandMint transition duration-200">EN</a>
@@ -127,13 +131,11 @@
         Tonghada Translation & Consulting
       </span>
       
-      <!-- H1 타이틀: 모바일 text-2xl 적용으로 세로로 긴 6줄 쪼개짐 해소 및 PC 2~3줄 배치 -->
       <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-snug md:leading-tight max-w-5xl lg:max-w-6xl mx-auto mb-6">
         Verbindt Zuid-Korea en Nederland. <br class="hidden md:inline"><span class="text-brandMint">Professionele</span> Koreaans-Nederlands Tolk- en Vertaalopdrachten.
       </h1>
 
-      <!-- P 설명 문구: max-w-5xl로 시원하게 가로폭 확장 -->
-      <p class="text-sm sm:text-base md:text-lg text-textLight max-w-xl sm:max-w-3xl lg:max-w-5xl mx-auto mb-10 leading-relaxed px-2 text-balance">
+      <p class="text-sm sm:text-base md:text-lg text-textLight max-w-xl sm:max-w-3xl lg:max-w-5xl mx-auto mb-10 leading-relaxed px-2">
         Uw betrouwbare partner voor nauwkeurige, op maat gemaakte en professionele taaloplossingen. Geleid door een ervaren recruiter met diepgaande sectorkennis.
       </p>
 
@@ -148,14 +150,12 @@
     </div>
   </section>
 
-    <!-- ==================== ABOUT US (COMPANY INTRO) ==================== -->
+  <!-- ==================== ABOUT US ==================== -->
   <section id="about" class="py-20 md:py-28 border-y border-white/5 bg-brandDark relative overflow-hidden">
-    <!-- 배경 은은한 빛 효과 -->
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,242,196,0.03),transparent_70%)] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       
-      <!-- 1. 섹션 헤더 (중앙 정렬로 정돈된 인상 제공) -->
       <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
         <span class="inline-block px-3 py-1 rounded-full bg-brandMint/10 text-brandMint text-xs font-mono tracking-widest uppercase border border-brandMint/20">
           Bedrijfsprofiel
@@ -166,36 +166,35 @@
         <div class="w-12 h-1 bg-brandMint mx-auto rounded-full mt-4"></div>
       </div>
 
-      <!-- 2. 좌우 대칭 균형 카드 레이아웃 -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
         
-        <!-- 왼쪽: 브랜드 철학 카드 (Philosophy Card) - 5컬럼 할당 -->
+        <!-- Philosophy Card (Refined slogan) -->
         <div class="lg:col-span-5 relative bg-gradient-to-br from-brandPurple/60 via-brandDark to-brandPurple/30 p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl flex flex-col justify-between group hover:border-brandMint/30 transition duration-300">
           <div class="absolute top-0 right-0 p-8 text-brandMint/10 group-hover:text-brandMint/20 transition duration-300">
             <i class="fa-solid fa-quote-right text-6xl"></i>
           </div>
           
           <div class="space-y-6 relative z-10 my-auto">
-            <span class="text-brandMint font-mono text-xs tracking-widest uppercase font-semibold">Philosophy</span>
+            <span class="text-brandMint font-mono text-xs tracking-widest uppercase font-semibold">Filosofie</span>
             <blockquote class="text-lg md:text-2xl font-light italic leading-relaxed text-gray-100">
               "Wij beginnen vanuit de wens om mensen te verbinden die een andere taal spreken, maar wel dezelfde visie willen delen."
             </blockquote>
           </div>
 
           <div class="pt-6 border-t border-white/10 mt-6 relative z-10 flex items-center justify-between">
-            <span class="text-xs text-brandMint font-semibold">TONGHADA Philosophy</span>
+            <span class="text-xs text-brandMint font-semibold">TONGHADA Filosofie</span>
             <div class="w-2 h-2 rounded-full bg-brandMint animate-pulse"></div>
           </div>
         </div>
 
-        <!-- 오른쪽: 회사 상세 소개 (Company Story) - 7컬럼 할당 및 서술형 배치 -->
+        <!-- Company Story -->
         <div class="lg:col-span-7 bg-white/5 border border-white/5 p-8 md:p-10 rounded-3xl flex flex-col justify-center space-y-6">
           <h3 class="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
             <span class="w-2 h-6 bg-brandMint rounded-full inline-block"></span>
             Authentieke Zakelijke Brug
           </h3>
 
-          <div class="text-textLight leading-relaxed space-y-5 text-sm md:text-lg">
+          <div class="text-textLight leading-relaxed space-y-5 text-sm md:text-base lg:text-lg">
             <p>
               De naam ‘Tonghada’ staat voor het verbinden van partners die elkaars doelen, visie en zakelijke belangen willen begrijpen en op elkaar willen afstemmen.
             </p>
@@ -204,7 +203,6 @@
             </p>
           </div>
 
-          <!-- 요약 포인트 뱃지 -->
           <div class="grid grid-cols-2 gap-4 pt-4 border-t border-white/5 text-xs md:text-sm font-semibold text-gray-300">
             <div class="flex items-center space-x-2">
               <i class="fa-solid fa-check text-brandMint"></i>
@@ -242,15 +240,15 @@
           <ul class="space-y-4 text-textLight text-xs md:text-base">
             <li class="space-y-1">
               <p class="text-white font-semibold">Vrije Universiteit Amsterdam — Master of Science</p>
-              <p class="text-xs">Bedrijfskunde (Specialisatie: Human Resource Management) Gediplomeerd</p>
+              <p class="text-xs md:text-sm">Bedrijfskunde (Specialisatie: Human Resource Management) Gediplomeerd</p>
             </li>
             <li class="space-y-1">
               <p class="text-white font-semibold">Vrije Universiteit Amsterdam — Bachelor of Science</p>
-              <p class="text-xs">Bedrijfskunde (Volledig Nederlandstalig curriculum)</p>
+              <p class="text-xs md:text-sm">Bedrijfskunde (Volledig Nederlandstalig curriculum)</p>
             </li>
             <li class="space-y-1">
               <p class="text-white font-semibold">Zuid-Koreaanse Marine (OCS)</p>
-              <p class="text-xs">Officier gevechtsinformatie, Adjutant, en Tolk officier bij de Marine</p>
+              <p class="text-xs md:text-sm">Officier gevechtsinformatie, Adjutant, en Tolk officier bij de Marine</p>
             </li>
           </ul>
         </div>
@@ -266,15 +264,15 @@
           <ul class="space-y-4 text-textLight text-xs md:text-base">
             <li class="space-y-1">
               <p class="text-white font-semibold">7 Jaar Ervaring als Corporate Recruiter (2018-2025)</p>
-              <p class="text-xs">Ervaren corporate recruiter & consultant gespecialiseerd in Offshore, Ruimtevaart, Duurzame Energie, en Halfgeleiders</p>
+              <p class="text-xs md:text-sm">Ervaren corporate recruiter & consultant gespecialiseerd in Offshore, Ruimtevaart, Duurzame Energie, en Halfgeleiders</p>
             </li>
             <li class="space-y-1">
               <p class="text-white font-semibold">Freelance Tolk & Vertaler (2009 - Heden)</p>
-              <p class="text-xs">Gespecialiseerd in Koreaans-Nederlands-Engels zakelijke bemiddeling, technische data en juridisch vertalen</p>
+              <p class="text-xs md:text-sm">Gespecialiseerd in Koreaans-Nederlands-Engels zakelijke bemiddeling, technische data en juridisch vertalen</p>
             </li>
             <li class="space-y-1">
               <p class="text-white font-semibold">Oprichting van TONGHADA (2026)</p>
-              <p class="text-xs">Ondersteuning en overbrugging van zakelijke expansies voor Koreaanse en Europese organisaties</p>
+              <p class="text-xs md:text-sm">Ondersteuning en overbrugging van zakelijke expansies voor Koreaanse en Europese organisaties</p>
             </li>
           </ul>
         </div>
@@ -369,28 +367,23 @@
             <span>Tolken (Afgelopen 3 Jaar)</span>
           </h3>
           <div class="space-y-4">
-            <!-- Port Card 1 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">Overheid & VIP</p>
               <h4 class="text-sm md:text-base font-semibold text-white">Hoog bezoek Zuid-Koreaanse minister aan Nederland VIP begeleiding</h4>
             </div>
-            <!-- Port Card 2 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">Instituut & Zakelijk</p>
               <h4 class="text-sm md:text-base font-semibold text-white">Zakelijke meetings ten behoeve van museumpersoneel</h4>
             </div>
-            <!-- Port Card 3 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">Semi-overheid VIP</p>
               <h4 class="text-sm md:text-base font-semibold text-white">VIP bezoek van een CEO van een semi-overheidsorganisatie aan Nederland</h4>
             </div>
-            <!-- Port Card 4 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">Juridisch & Rechtbank</p>
               <h4 class="text-sm md:text-base font-semibold text-white">Bestuurlijke rechtszaak bij de Nederlandse rechtbank</h4>
             </div>
             
-            <!-- Collapsible Section -->
             <div id="interpretation-more" class="collapsible-content space-y-4">
               <div class="p-5 bg-white/5 rounded-xl border border-white/5">
                 <p class="text-brandMint text-xs font-semibold mb-1">Landbouw & Welzijn</p>
@@ -402,7 +395,6 @@
               </div>
             </div>
             
-            <!-- Toggle Button -->
             <button onclick="toggleSection('interpretation-more', this)" class="btn-toggle inline-flex items-center space-x-2 text-sm font-semibold mt-2 focus:outline-none">
               <span class="btn-text">Meer Weergeven</span>
               <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -416,22 +408,18 @@
             <span>Vertalen & Coördinatie</span>
           </h3>
           <div class="space-y-4">
-            <!-- Port Card 1 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">Medische Handleidingen</p>
               <h4 class="text-sm md:text-base font-semibold text-white">Nederlandse handleiding van medisch product</h4>
             </div>
-            <!-- Port Card 2 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">Overheid & Luchtvaart Coördinatie</p>
               <h4 class="text-sm md:text-base font-semibold text-white">Contact gelegd met Nederlandse overheidsinstanties en bedrijven in de luchtvaartindustrie</h4>
             </div>
-            <!-- Port Card 3 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">Media-Ondertiteling</p>
               <h4 class="text-sm md:text-base font-semibold text-white">Ondertiteling van een Koreaanse familie TV show & voedselgerelateerde documentaire</h4>
             </div>
-            <!-- Port Card 4 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">Familie-archief</p>
               <h4 class="text-sm md:text-base font-semibold text-white">Brieven vertaling en persoonlijke documenten voor geadopteerden</h4>
@@ -442,7 +430,7 @@
     </div>
   </section>
 
-    <!-- ==================== CONTACT SECTION ==================== -->
+  <!-- ==================== CONTACT SECTION ==================== -->
   <section id="contact" class="py-20 bg-gradient-to-b from-brandDark to-brandPurple relative">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16 space-y-3">
@@ -487,35 +475,33 @@
             </div>
           </div>
 
-          <!-- KvK & BTW Double Grid Card -->
+          <!-- KvK & BTW Cards -->
           <div class="grid grid-cols-2 gap-2.5 sm:gap-3 pt-1">
-  <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
-    <div class="flex items-center space-x-1.5 sm:space-x-2.5 mb-1">
-      <div class="w-6 h-6 sm:w-7 sm:h-7 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
-        <i class="fa-solid fa-building-shield text-[10px] sm:text-xs"></i>
-      </div>
-      <p class="text-[10px] sm:text-[11px] text-textLight font-medium truncate">KvK nummer</p>
-    </div>
-    <p class="text-xs sm:text-sm font-bold tracking-wider text-white pl-0.5 truncate">99926105</p>
-  </div>
+            <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
+              <div class="flex items-center space-x-1.5 sm:space-x-2 mb-1">
+                <div class="w-6 h-6 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
+                  <i class="fa-solid fa-building-shield text-[10px] sm:text-xs"></i>
+                </div>
+                <p class="text-[10px] sm:text-[11px] text-textLight font-medium truncate">KvK nummer</p>
+              </div>
+              <p class="text-xs sm:text-sm font-bold tracking-wider text-white pl-0.5 truncate">99926105</p>
+            </div>
 
-  <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
-    <div class="flex items-center space-x-1.5 sm:space-x-2.5 mb-1">
-      <div class="w-6 h-6 sm:w-7 sm:h-7 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
-        <i class="fa-solid fa-receipt text-[10px] sm:text-xs"></i>
-      </div>
-      <p class="text-[10px] sm:text-[11px] text-textLight font-medium truncate">Btw-identificatienummer (btw-id)</p>
-    </div>
-    <p class="text-[10px] sm:text-xs font-bold tracking-tight text-white pl-0.5 truncate" title="NL005419387B03">NL005419387B03</p>
-  </div>
-</div>
+            <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
+              <div class="flex items-center space-x-1.5 sm:space-x-2 mb-1">
+                <div class="w-6 h-6 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
+                  <i class="fa-solid fa-receipt text-[10px] sm:text-xs"></i>
+                </div>
+                <p class="text-[10px] sm:text-[11px] text-textLight font-medium truncate">Btw-identificatienummer (BTW-id)</p>
+              </div>
+              <p class="text-[10px] sm:text-xs font-bold tracking-tight text-white pl-0.5 truncate" title="NL005419387B03">NL005419387B03</p>
+            </div>
+          </div>
 
         </div>
 
-        <!-- Consultation Form with Web3Forms Live Email Integration -->
+        <!-- Consultation Form -->
         <div class="lg:col-span-2 bg-white/5 p-6 md:p-8 rounded-2xl border border-white/5 relative">
-          
-          <!-- Web3Forms Form -->
           <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6 transition-all duration-300">
             <input type="hidden" name="access_key" value="b459bf08-582c-4999-9f2f-9cec60a7376a">
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -535,10 +521,10 @@
             <div>
               <label class="block text-xs font-semibold text-textLight mb-2">Onderwerp</label>
               <select name="subject" class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white">
-                <option value="전문 비즈니스 번역">Vertaling (Koreaans-Nederlands-Engels)</option>
-                <option value="비즈니스 / 수행 통역">Tolken op Locatie</option>
-                <option value="현지 섭외 및 차량 코디네이션">Coördinatie & Chauffeursdienst</option>
-                <option value="기타 문의">Overige Vragen</option>
+                <option value="Vertaling (Koreaans-Nederlands-Engels)">Vertaling (Koreaans-Nederlands-Engels)</option>
+                <option value="Tolken op Locatie">Tolken op Locatie</option>
+                <option value="Coördinatie & Chauffeursdienst">Coördinatie & Chauffeursdienst</option>
+                <option value="Overige Vragen">Overige Vragen</option>
               </select>
             </div>
             <div>
@@ -555,7 +541,6 @@
             </button>
           </form>
 
-          <!-- Success Card -->
           <div id="success-card" class="hidden flex-col items-center justify-center text-center py-12 px-4 space-y-6 animate-fade-in">
             <div class="w-20 h-20 bg-brandMint/10 rounded-full flex items-center justify-center text-brandMint animate-bounce">
               <i class="fa-solid fa-circle-check text-5xl"></i>
@@ -605,6 +590,7 @@
     </div>
   </div>
 
+  <!-- ==================== JAVASCRIPT ==================== -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       if (!localStorage.getItem('cookieConsent')) {
