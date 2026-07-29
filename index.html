@@ -49,7 +49,7 @@
   <style>
     html { scroll-behavior: smooth; }
     
-    /* 한국어 타이포그래피 핵심 치트키: 단어 단위 줄바꿈 강제 설정 */
+    /* 한국어 타이포그래피 핵심 치트키: 단어 단위 줄바꿈 설정 */
     body {
       word-break: keep-all;
     }
@@ -95,9 +95,9 @@
       transition: transform 0.3s ease;
     }
     
-    /* PC 대화면 문맥 균형 자동 정렬 (단어 자름 원천 방지) */
+    /* PC 대화면 제목만 균형 정렬 (본문 P 태그는 가로 폭을 시원하게 채우도록 제외) */
     @media (min-width: 768px) {
-      h1, h2, h3, p, blockquote { text-wrap: balance; }
+      h1, h2 { text-wrap: balance; }
     }
   </style>
 </head>
@@ -139,14 +139,14 @@
         통하다 통번역 컨설팅
       </span>
       
-      <!-- H1 타이틀: 모바일 text-3xl 큼직한 가독성 확보, 단어 끊김 완벽 방지 -->
+      <!-- H1 타이틀 -->
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-snug md:leading-tight max-w-5xl lg:max-w-6xl mx-auto mb-6">
         비즈니스의 맥락을 <span class="whitespace-nowrap">이어</span> <span class="whitespace-nowrap">성공을 <span class="text-brandMint">통하다</span></span>
       </h1>
 
-      <!-- P 설명 문구: PC 대화면 가로폭 확장 및 '전문가가' 단어 쪼개짐 방지 -->
+      <!-- P 설명 문구 -->
       <p class="text-sm sm:text-base md:text-lg text-textLight max-w-xl sm:max-w-3xl lg:max-w-5xl mx-auto mb-10 leading-relaxed px-2">
-        단순한 언어 번역을 넘어, <span class="inline-block">7년 경력의</span> <span class="inline-block">글로벌 테크 리크루터 출신</span> <span class="inline-block">전문가가</span> 비즈니스의 깊은 가치와 맥락을 고스란히 현지화하여 전달합니다.
+        단순한 언어 번역을 넘어, 7년 경력의 글로벌 테크 리크루터 출신 <span class="inline-block">전문가가</span> 비즈니스의 깊은 가치와 맥락을 고스란히 현지화하여 전달합니다.
       </p>
 
       <!-- 버튼 가로/세로 유연한 그리드 -->
@@ -163,7 +163,6 @@
 
   <!-- ==================== ABOUT US (COMPANY INTRO) ==================== -->
   <section id="about" class="py-20 md:py-28 border-y border-white/5 bg-brandDark relative overflow-hidden">
-    <!-- 배경 은은한 빛 효과 -->
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,242,196,0.03),transparent_70%)] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -201,16 +200,16 @@
           </div>
         </div>
 
-        <!-- 오른쪽: 회사 상세 소개 (Company Story) -->
+        <!-- 오른쪽: 회사 상세 소개 (Company Story - PC에서 본문이 꽉 차도록 여백 및 줄바꿈 보정) -->
         <div class="lg:col-span-7 bg-white/5 border border-white/5 p-8 md:p-10 rounded-3xl flex flex-col justify-center space-y-6">
           <h3 class="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
             <span class="w-2 h-6 bg-brandMint rounded-full inline-block"></span>
             진정성 있는 비즈니스 가교
           </h3>
 
-          <div class="text-textLight leading-relaxed space-y-5 text-sm md:text-lg">
+          <div class="text-textLight leading-relaxed space-y-5 text-sm md:text-base lg:text-lg">
             <p>
-              '통하다'라는 회사명은 언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 지었습니다.
+              ‘통하다'라는 회사명은 언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 지었습니다.
             </p>
             <p>
               한국어-네덜란드어-영어 통역과 번역을 2009년부터 전문적으로 수행해오고 있으며, 단순 문장 전달을 넘어 고객이 필요로 하는 가장 정밀하고 신뢰할 수 있는 비즈니스 가교를 구축합니다.
@@ -255,15 +254,15 @@
           <ul class="space-y-4 text-textLight text-xs md:text-base">
             <li class="space-y-1">
               <p class="text-white font-semibold">암스테르담 자유대학교 경영학 석사</p>
-              <p class="text-xs">인적자원관리 (Human Resource Management) 전공 졸업</p>
+              <p class="text-xs md:text-sm">인적자원관리 (Human Resource Management) 전공 졸업</p>
             </li>
             <li class="space-y-1">
               <p class="text-white font-semibold">암스테르담 자유대학교 경영학 학사</p>
-              <p class="text-xs">네덜란드어 정규 과정 이수 (Program taught in Dutch)</p>
+              <p class="text-xs md:text-sm">네덜란드어 정규 과정 이수 (Program taught in Dutch)</p>
             </li>
             <li class="space-y-1">
               <p class="text-white font-semibold">대한민국 해군 학사장교 중위 전역</p>
-              <p class="text-xs">전투정보관, 사령관 부관, 전담 통역장교 실무 수행</p>
+              <p class="text-xs md:text-sm">전투정보관, 사령관 부관, 전담 통역장교 실무 수행</p>
             </li>
           </ul>
         </div>
@@ -279,15 +278,15 @@
           <ul class="space-y-4 text-textLight text-xs md:text-base">
             <li class="space-y-1">
               <p class="text-white font-semibold">글로벌 테크 리크루터 및 헤드헌터 7년 역임 (2018-2025)</p>
-              <p class="text-xs">해양 에너지, 우주항공, 신재생 에너지, 반도체 제조 장비 전문 기술 이해도 보유</p>
+              <p class="text-xs md:text-sm">해양 에너지, 우주항공, 신재생 에너지, 반도체 제조 장비 전문 기술 이해도 보유</p>
             </li>
             <li class="space-y-1">
               <p class="text-white font-semibold">비즈니스 전문 프리랜서 통번역가 (2009년 ~ 현재)</p>
-              <p class="text-xs">한-영-네덜란드어 전문 비즈니스 계약서, 법률 공문 및 첨단 산업 기술 번역 전담</p>
+              <p class="text-xs md:text-sm">한-영-네덜란드어 전문 비즈니스 계약서, 법률 공문 및 첨단 산업 기술 번역 전담</p>
             </li>
             <li class="space-y-1">
               <p class="text-white font-semibold">통하다 통번역 컨설팅 설립 (2026)</p>
-              <p class="text-xs">한국과 유럽 비즈니스 확장을 돕는 통번역 전문 컨설팅 출범</p>
+              <p class="text-xs md:text-sm">한국과 유럽 비즈니스 확장을 돕는 통번역 전문 컨설팅 출범</p>
             </li>
           </ul>
         </div>
@@ -338,7 +337,7 @@
           </div>
         </div>
 
-        <!-- Service 3: Driving -->
+        <!-- Service 3: Driving (PC 카드가 넓어짐에 따라 가로 폭을 알차게 활용) -->
         <div class="bg-brandPurple/20 border border-white/5 p-6 rounded-2xl hover:border-brandMint/30 transition duration-300 flex flex-col justify-between">
           <div class="space-y-4">
             <div class="w-10 h-10 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint">
@@ -382,28 +381,23 @@
             <span>통역 분야</span>
           </h3>
           <div class="space-y-4">
-            <!-- Port Card 1 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">정부 및 VIP 의전</p>
               <h4 class="text-sm md:text-base font-semibold text-white">대한민국 장관 네덜란드 공식 방문 VIP 통역</h4>
             </div>
-            <!-- Port Card 2 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">기관 및 비즈니스 미팅</p>
               <h4 class="text-sm md:text-base font-semibold text-white">네덜란드 주요 박물관 인사 방문 비즈니스 통역</h4>
             </div>
-            <!-- Port Card 3 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">공기업 사령탑 의전</p>
               <h4 class="text-sm md:text-base font-semibold text-white">공기업 사장 네덜란드 내빈 초청 및 순방 VIP 통역</h4>
             </div>
-            <!-- Port Card 4 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">법률 및 행정</p>
               <h4 class="text-sm md:text-base font-semibold text-white">네덜란드 법원 행정소송 전문 통역</h4>
             </div>
             
-            <!-- 펼치기/접기 애니메이션 컨테이너 -->
             <div id="interpretation-more" class="collapsible-content space-y-4">
               <div class="p-5 bg-white/5 rounded-xl border border-white/5">
                 <p class="text-brandMint text-xs font-semibold mb-1">농업 & 교육</p>
@@ -415,7 +409,6 @@
               </div>
             </div>
             
-            <!-- 세련된 펼치기/접기 버튼 -->
             <button onclick="toggleSection('interpretation-more', this)" class="btn-toggle inline-flex items-center space-x-2 text-sm font-semibold mt-2 focus:outline-none">
               <span class="btn-text">펼치기</span>
               <i class="fa-solid fa-chevron-down text-xs"></i>
@@ -429,22 +422,18 @@
             <span>번역 및 비즈니스 섭외 분야</span>
           </h3>
           <div class="space-y-4">
-            <!-- Port Card 1 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">의료 기기 및 사용 설명서</p>
               <h4 class="text-sm md:text-base font-semibold text-white">의료용품 네덜란드어 정밀 사용 설명서 제작 및 번역</h4>
             </div>
-            <!-- Port Card 2 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">비즈니스 조율</p>
               <h4 class="text-sm md:text-base font-semibold text-white">항공분야 정부 부처 및 현지 유관 기업 접촉 & 섭외 지원</h4>
             </div>
-            <!-- Port Card 3 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">영상 자막 현지화</p>
               <h4 class="text-sm md:text-base font-semibold text-white">지상파 가족 예능 프로그램 및 음식 다큐멘터리 자막 번역</h4>
             </div>
-            <!-- Port Card 4 -->
             <div class="p-5 bg-white/5 rounded-xl border border-white/5 hover:border-brandMint/10 transition">
               <p class="text-brandMint text-xs font-semibold mb-1">입양 아카이브 번역</p>
               <h4 class="text-sm md:text-base font-semibold text-white">해외 입양인 편지 및 패밀리 아카이브 복원 번역</h4>
@@ -464,7 +453,7 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
-        <!-- Contact Information Cards (좌측 연락처 및 사업자 정보) -->
+        <!-- Contact Information Cards -->
         <div class="space-y-4 md:space-y-5 lg:col-span-1">
           
           <!-- 1. Email Card -->
@@ -500,9 +489,8 @@
             </div>
           </div>
 
-          <!-- 4. KvK & BTW (사업자 / 세무 등록 정보 2열 콤팩트 카드) -->
+          <!-- 4. KvK & BTW 카드 -->
           <div class="grid grid-cols-2 gap-2.5 sm:gap-3 pt-1">
-            <!-- KvK Card -->
             <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
               <div class="flex items-center space-x-1.5 sm:space-x-2 mb-1">
                 <div class="w-6 h-6 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
@@ -513,7 +501,6 @@
               <p class="text-xs sm:text-sm font-bold tracking-wider text-white pl-0.5 truncate">99926105</p>
             </div>
 
-            <!-- BTW Card (VAT 전용 영수증 아이콘 적용) -->
             <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
               <div class="flex items-center space-x-1.5 sm:space-x-2 mb-1">
                 <div class="w-6 h-6 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
@@ -529,12 +516,8 @@
 
         <!-- Consultation Form with Web3Forms Live Email Integration -->
         <div class="lg:col-span-2 bg-white/5 p-6 md:p-8 rounded-2xl border border-white/5 relative">
-          
-          <!-- 메일 전송 입력 폼 -->
           <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6 transition-all duration-300">
-            <!-- 발급받으신 고유 액세스 토큰 키가 안전하게 세팅되어 있습니다 -->
             <input type="hidden" name="access_key" value="b459bf08-582c-4999-9f2f-9cec60a7376a">
-            <!-- 스팸 방지용 허니팟 시스템 -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
             <h3 class="text-lg md:text-xl font-bold mb-6">빠른 의뢰 상담 접수</h3>
@@ -563,7 +546,6 @@
               <textarea name="message" rows="4" required class="w-full bg-brandDark border border-white/10 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-brandMint text-white"></textarea>
             </div>
             
-            <!-- 전송 버튼 및 로딩 제어 -->
             <button type="submit" id="submit-btn" class="w-full py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300 flex items-center justify-center space-x-2 text-sm md:text-base">
               <span id="btn-text">의뢰 접수하기 ➔</span>
               <svg id="loading-spinner" class="hidden animate-spin h-5 w-5 text-brandDark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -573,7 +555,6 @@
             </button>
           </form>
 
-          <!-- 전송 성공 시 동적으로 노출되는 고품격 안내 카드 -->
           <div id="success-card" class="hidden flex-col items-center justify-center text-center py-12 px-4 space-y-6 animate-fade-in">
             <div class="w-20 h-20 bg-brandMint/10 rounded-full flex items-center justify-center text-brandMint animate-bounce">
               <i class="fa-solid fa-circle-check text-5xl"></i>
