@@ -4,16 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TONGHADA - 통하다 통번역 컨설팅</title>
+  
+  <!-- SEO 및 메타태그 -->
+  <meta name="description" content="7년 경력 글로벌 테크 리크루터 출신 대표가 제공하는 한-영-네덜란드어 전문 비즈니스 통번역 및 현지 코디네이션 솔루션">
+  <meta name="keywords" content="네덜란드어 통역, 네덜란드어 번역, 한네 통역, 네덜란드 출장, TONGHADA, 통하다 통번역">
+  <meta name="author" content="TONGHADA Translation & Consulting">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts & FontAwesome Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <!-- 통하다 파비콘 및 카카오톡/링크드인 공유용 썸네일 설정 -->
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="favicon.png">
 
   <!-- 카톡 / 링크드인 / SNS URL 공유 시 뜨는 썸네일 이미지 -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tonghada.nl">
+  <meta property="og:title" content="TONGHADA - 통하다 통번역 컨설팅">
+  <meta property="og:description" content="비즈니스의 맥락을 이어 성공을 통하다. 한-영-네덜란드어 전문 비즈니스 통번역 솔루션">
   <meta property="og:image" content="https://tonghada.nl/favicon.png">
 
   <script>
@@ -83,8 +94,9 @@
       display: inline-block;
       transition: transform 0.3s ease;
     }
+    
+    /* PC 대화면 문맥 균형 자동 정렬 (단어 자름 원천 방지) */
     @media (min-width: 768px) {
-      body { word-break: normal !important; }
       h1, h2, h3, p, blockquote { text-wrap: balance; }
     }
   </style>
@@ -127,17 +139,17 @@
         통하다 통번역 컨설팅
       </span>
       
-      <!-- H1 타이틀: 모바일 및 PC 폰트 밸런스 -->
-      <h1 class="text-2.5xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-snug md:leading-tight max-w-5xl lg:max-w-6xl mx-auto mb-6 text-balance">
+      <!-- H1 타이틀: 모바일 text-3xl 큼직한 가독성 확보, 단어 끊김 완벽 방지 -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-snug md:leading-tight max-w-5xl lg:max-w-6xl mx-auto mb-6">
         비즈니스의 맥락을 <span class="whitespace-nowrap">이어</span> <span class="whitespace-nowrap">성공을 <span class="text-brandMint">통하다</span></span>
       </h1>
 
-      <!-- P 설명 문구: PC 대화면에서 양옆 여백을 시원하게 채우도록 max-w-4xl lg:max-w-5xl 로 확장 -->
-      <p class="text-sm sm:text-base md:text-lg text-textLight max-w-xl sm:max-w-3xl lg:max-w-5xl mx-auto mb-10 leading-relaxed px-2 text-balance">
-        단순한 언어 번역을 넘어, 7년 경력의 글로벌 테크 리크루터 출신 전문가가 비즈니스의 깊은 가치와 맥락을 고스란히 현지화하여 전달합니다.
+      <!-- P 설명 문구: PC 대화면 가로폭 확장 및 '전문가가' 단어 쪼개짐 방지 -->
+      <p class="text-sm sm:text-base md:text-lg text-textLight max-w-xl sm:max-w-3xl lg:max-w-5xl mx-auto mb-10 leading-relaxed px-2">
+        단순한 언어 번역을 넘어, <span class="inline-block">7년 경력의</span> <span class="inline-block">글로벌 테크 리크루터 출신</span> <span class="inline-block font-semibold text-white">전문가가</span> 비즈니스의 깊은 가치와 맥락을 고스란히 현지화하여 전달합니다.
       </p>
 
-      <!-- 버튼 가로/세로 레이아웃 -->
+      <!-- 버튼 가로/세로 유연한 그리드 -->
       <div class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xs sm:max-w-none mx-auto">
         <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-brandMint text-brandDark font-bold rounded-lg hover:bg-white glow-effect transition duration-300 text-center text-sm md:text-base whitespace-nowrap">
           무료 견적 문의 ➔
@@ -149,14 +161,14 @@
     </div>
   </section>
 
-    <!-- ==================== ABOUT US (COMPANY INTRO) ==================== -->
+  <!-- ==================== ABOUT US (COMPANY INTRO) ==================== -->
   <section id="about" class="py-20 md:py-28 border-y border-white/5 bg-brandDark relative overflow-hidden">
     <!-- 배경 은은한 빛 효과 -->
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,242,196,0.03),transparent_70%)] pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       
-      <!-- 1. 섹션 헤더 (중앙 정렬로 정돈된 인상 제공) -->
+      <!-- 1. 섹션 헤더 -->
       <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
         <span class="inline-block px-3 py-1 rounded-full bg-brandMint/10 text-brandMint text-xs font-mono tracking-widest uppercase border border-brandMint/20">
           About Us
@@ -170,7 +182,7 @@
       <!-- 2. 좌우 대칭 균형 카드 레이아웃 -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
         
-        <!-- 왼쪽: 브랜드 철학 카드 (Philosophy Card) - 5컬럼 할당 -->
+        <!-- 왼쪽: 브랜드 철학 카드 (Philosophy Card) -->
         <div class="lg:col-span-5 relative bg-gradient-to-br from-brandPurple/60 via-brandDark to-brandPurple/30 p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl flex flex-col justify-between group hover:border-brandMint/30 transition duration-300">
           <div class="absolute top-0 right-0 p-8 text-brandMint/10 group-hover:text-brandMint/20 transition duration-300">
             <i class="fa-solid fa-quote-right text-6xl"></i>
@@ -189,7 +201,7 @@
           </div>
         </div>
 
-        <!-- 오른쪽: 회사 상세 소개 (Company Story) - 7컬럼 할당 및 서술형 배치 -->
+        <!-- 오른쪽: 회사 상세 소개 (Company Story) -->
         <div class="lg:col-span-7 bg-white/5 border border-white/5 p-8 md:p-10 rounded-3xl flex flex-col justify-center space-y-6">
           <h3 class="text-xl md:text-2xl font-bold text-white flex items-center gap-3">
             <span class="w-2 h-6 bg-brandMint rounded-full inline-block"></span>
@@ -198,7 +210,7 @@
 
           <div class="text-textLight leading-relaxed space-y-5 text-sm md:text-lg">
             <p>
-              ‘통하다'라는 회사명은 언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 지었습니다.
+              '통하다'라는 회사명은 언어가 다르지만 서로의 뜻이 통하고 싶은 분들을 연결하겠다는 마음으로 지었습니다.
             </p>
             <p>
               한국어-네덜란드어-영어 통역과 번역을 2009년부터 전문적으로 수행해오고 있으며, 단순 문장 전달을 넘어 고객이 필요로 하는 가장 정밀하고 신뢰할 수 있는 비즈니스 가교를 구축합니다.
@@ -490,28 +502,28 @@
 
           <!-- 4. KvK & BTW (사업자 / 세무 등록 정보 2열 콤팩트 카드) -->
           <div class="grid grid-cols-2 gap-2.5 sm:gap-3 pt-1">
-  <!-- KvK Card -->
-  <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
-    <div class="flex items-center space-x-1.5 sm:space-x-2.5 mb-1">
-      <div class="w-6 h-6 sm:w-7 sm:h-7 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
-        <i class="fa-solid fa-building-shield text-[10px] sm:text-xs"></i>
-      </div>
-      <p class="text-[10px] sm:text-[11px] text-textLight font-medium truncate">네덜란드 상공회의소 등록번호</p>
-    </div>
-    <p class="text-xs sm:text-sm font-bold tracking-wider text-white pl-0.5 truncate">99926105</p>
-  </div>
+            <!-- KvK Card -->
+            <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
+              <div class="flex items-center space-x-1.5 sm:space-x-2 mb-1">
+                <div class="w-6 h-6 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
+                  <i class="fa-solid fa-building-shield text-[10px] sm:text-xs"></i>
+                </div>
+                <p class="text-[10px] sm:text-[11px] text-textLight font-medium truncate">네덜란드 상공회의소 등록번호</p>
+              </div>
+              <p class="text-xs sm:text-sm font-bold tracking-wider text-white pl-0.5 truncate">99926105</p>
+            </div>
 
-  <!-- BTW Card -->
-  <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
-    <div class="flex items-center space-x-1.5 sm:space-x-2.5 mb-1">
-      <div class="w-6 h-6 sm:w-7 sm:h-7 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
-        <i class="fa-solid fa-receipt text-[10px] sm:text-xs"></i>
-      </div>
-      <p class="text-[10px] sm:text-[11px] text-textLight font-medium truncate">네덜란드 부가세 등록번호 (btw-id)</p>
-    </div>
-    <p class="text-[10px] sm:text-xs font-bold tracking-tight text-white pl-0.5 truncate" title="NL005419387B03">NL005419387B03</p>
-  </div>
-</div>
+            <!-- BTW Card (VAT 전용 영수증 아이콘 적용) -->
+            <div class="p-3 sm:p-4 bg-white/5 rounded-2xl border border-white/5 hover:border-brandMint/20 transition min-w-0">
+              <div class="flex items-center space-x-1.5 sm:space-x-2 mb-1">
+                <div class="w-6 h-6 bg-brandMint/10 rounded-lg flex items-center justify-center text-brandMint shrink-0">
+                  <i class="fa-solid fa-receipt text-[10px] sm:text-xs"></i>
+                </div>
+                <p class="text-[10px] sm:text-[11px] text-textLight font-medium truncate">네덜란드 부가세 등록번호 (BTW-id)</p>
+              </div>
+              <p class="text-[10px] sm:text-xs font-bold tracking-tight text-brandMint pl-0.5 truncate" title="NL005419387B03">NL005419387B03</p>
+            </div>
+          </div>
 
         </div>
 
@@ -520,7 +532,7 @@
           
           <!-- 메일 전송 입력 폼 -->
           <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6 transition-all duration-300">
-            <!-- 발급받으신 고유 액세스 토큰 키를 여기에 붙여넣어 주세요 -->
+            <!-- 발급받으신 고유 액세스 토큰 키가 안전하게 세팅되어 있습니다 -->
             <input type="hidden" name="access_key" value="b459bf08-582c-4999-9f2f-9cec60a7376a">
             <!-- 스팸 방지용 허니팟 시스템 -->
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -611,6 +623,7 @@
     </div>
   </div>
 
+  <!-- ==================== JAVASCRIPT ==================== -->
   <script>
     window.addEventListener('DOMContentLoaded', () => {
       if (!localStorage.getItem('cookieConsent')) {
